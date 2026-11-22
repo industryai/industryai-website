@@ -30,12 +30,11 @@ Der öffentliche Zugriff ist erforderlich, damit Supabase den Endpunkt serversei
 
 ## 4. Supabase-Secrets hinterlegen
 
-Im Supabase-Projekt **industryai-backend** unter **Project Settings → Edge Functions → Secrets** zwei Secrets anlegen:
+Im Supabase-Projekt **industryai-backend** unter **Project Settings → Edge Functions → Secrets** nur dieses Secret anlegen:
 
-- `INDUSTRYAI_EMAIL_WEBHOOK_URL` = vollständige Apps-Script-Web-App-URL mit `/exec`
 - `INDUSTRYAI_EMAIL_WEBHOOK_SECRET` = exakt derselbe geheime Wert wie in den Skripteigenschaften
 
-Die URL und den geheimen Wert nicht in Website-Dateien, GitHub-Commits oder Chat-Nachrichten eintragen.
+Die öffentliche Web-App-URL ist bereits als nicht geheime Konfiguration in der Edge Function hinterlegt. Sie muss nicht als Supabase-Secret verwaltet werden. Den geheimen Wert niemals in Website-Dateien, GitHub-Commits oder Chat-Nachrichten eintragen.
 
 ## 5. Verhalten und Datenschutz
 
