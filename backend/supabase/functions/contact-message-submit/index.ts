@@ -139,10 +139,35 @@ Deno.serve(async (req: Request) => {
         }),
         signal: AbortSignal.timeout(15000),
       });
-      const result = await response.json().catch(() => null);
+      const responseText = await response.text();
+      let result: { ok?: boolean; error?: string; duplicate?: boolean } | null = null;
+      try {
+        result = JSON.parse(responseText);
+      } catch {
+        result = null;
+      }
       if (!response.ok || result?.ok !== true) {
-        console.error("INDUSTRYAI notification self-test was not confirmed.");
-        return jsonResponse({ success: false, error: "notification_delivery_failed" }, 502);
+        const safeError = typeof result?.error === "string" &&
+          /^[a-z_]{2,50}$/.test(result.error)
+          ? result.error
+          : "non_json_or_unexpected_google_response";
+        console.error(
+          "INDUSTRYAI notification self-test failed:",
+          JSON.stringify({
+            google_http_status: response.status,
+            google_content_type: response.headers.get("content-type") ?? "unknown",
+            google_error: safeError,
+          }),
+        );
+        return jsonResponse({
+          success: false,
+          error: "notification_delivery_failed",
+          diagnostic: {
+            google_http_status: response.status,
+            google_content_type: response.headers.get("content-type") ?? "unknown",
+            google_error: safeError,
+          },
+        }, 502);
       }
       return jsonResponse({ success: true, notification: "confirmed" }, 200);
     } catch {
