@@ -4,10 +4,12 @@ const ALLOWED_ORIGIN = "https://industryai.github.io";
 const EXPECTED_HOSTNAME = "industryai.github.io";
 const EXPECTED_ACTION = "contact_message_submit";
 const MAX_BODY_BYTES = 8_000;
+// Public Google Apps Script deployment URL; the webhook secret remains in Supabase Secrets.
+const INDUSTRYAI_EMAIL_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwzHdKWFtosX1kk8HNOxeJvXzOjVXyh7l8hr7_a2AFGZzWPe4saKM_rkM2XJG0hIfl7/exec";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
-  "Access-Control-Allow-Headers": "apikey, content-type",
+  "Access-Control-Allow-Headers": "apikey, content-type, x-industryai-email-test-secret",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Max-Age": "86400",
   "Vary": "Origin",
@@ -27,6 +29,13 @@ function cleanText(value: unknown, maxLength: number): string | null {
     .replace(/[\u0001-\u0008\u000b\u000c\u000e-\u001f\u007f]/g, " ")
     .trim();
   return cleaned.length > maxLength ? null : cleaned;
+}
+
+function secureEquals(a: string, b: string): boolean {
+  if (a.length !== b.length) return false;
+  let mismatch = 0;
+  for (let i = 0; i < a.length; i++) mismatch |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return mismatch === 0;
 }
 
 async function hmacHex(secret: string, value: string): Promise<string> {
@@ -68,8 +77,10 @@ const adminClient = supabaseUrl && secretKey
   : null;
 
 Deno.serve(async (req: Request) => {
+  const requestPath = new URL(req.url).pathname;
+  const isNotificationTestRequest = requestPath.endsWith("/test-notification");
   const origin = req.headers.get("origin") ?? "";
-  if (origin !== ALLOWED_ORIGIN) {
+  if (origin !== ALLOWED_ORIGIN && !isNotificationTestRequest) {
     return new Response("Forbidden", { status: 403 });
   }
 
@@ -82,6 +93,62 @@ Deno.serve(async (req: Request) => {
 
   if (!publishableKey || req.headers.get("apikey") !== publishableKey) {
     return jsonResponse({ success: false, error: "invalid_api_key" }, 401);
+  }
+
+  // Protected operational self-test. It sends one synthetic notification only;
+  // it does not write to contact_messages and never returns secret values.
+  if (isNotificationTestRequest) {
+    const notificationUrl = INDUSTRYAI_EMAIL_WEBHOOK_URL;
+    const notificationSecret = Deno.env.get("INDUSTRYAI_EMAIL_WEBHOOK_SECRET") ?? "";
+    const suppliedTestSecret = req.headers.get("x-industryai-email-test-secret") ?? "";
+
+    if (
+      notificationSecret.length < 32 ||
+      !secureEquals(suppliedTestSecret, notificationSecret)
+    ) {
+      return jsonResponse({ success: false, error: "test_not_authorized" }, 403);
+    }
+
+    let validNotificationUrl = false;
+    try {
+      const parsedNotificationUrl = new URL(notificationUrl);
+      validNotificationUrl =
+        parsedNotificationUrl.protocol === "https:" &&
+        parsedNotificationUrl.hostname === "script.google.com" &&
+        parsedNotificationUrl.pathname.startsWith("/macros/s/") &&
+        parsedNotificationUrl.pathname.endsWith("/exec");
+    } catch {
+      validNotificationUrl = false;
+    }
+    if (!validNotificationUrl) {
+      return jsonResponse({ success: false, error: "notification_url_not_configured" }, 503);
+    }
+
+    const testReference = crypto.randomUUID();
+    try {
+      const response = await fetch(notificationUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          secret: notificationSecret,
+          reference: testReference,
+          name: "INDUSTRYAI Systemtest",
+          email: "industryaisupport@gmail.com",
+          subject: "INDUSTRYAI – Test der E-Mail-Benachrichtigung",
+          message: "Diese technische Testnachricht prüft die Verbindung zwischen Supabase, Google Apps Script und Gmail. Es wurde kein Kontaktformular-Datensatz angelegt.",
+        }),
+        signal: AbortSignal.timeout(15000),
+      });
+      const result = await response.json().catch(() => null);
+      if (!response.ok || result?.ok !== true) {
+        console.error("INDUSTRYAI notification self-test was not confirmed.");
+        return jsonResponse({ success: false, error: "notification_delivery_failed" }, 502);
+      }
+      return jsonResponse({ success: true, notification: "confirmed" }, 200);
+    } catch {
+      console.error("INDUSTRYAI notification self-test request failed.");
+      return jsonResponse({ success: false, error: "notification_request_failed" }, 502);
+    }
   }
 
   const turnstileSecret = Deno.env.get("CLOUDFLARE_TURNSTILE_SECRET_KEY") ?? "";
@@ -216,6 +283,52 @@ Deno.serve(async (req: Request) => {
   if (insertError || !inserted) {
     if (insertError) console.error("Contact message insert failed:", insertError.message);
     return jsonResponse({ success: false, error: "submission_failed" }, 500);
+  }
+
+  // Optional Gmail notification bridge. The contact record is already safely
+  // stored above; a notification failure must never discard the visitor's request.
+  const notificationUrl = INDUSTRYAI_EMAIL_WEBHOOK_URL;
+  const notificationSecret = Deno.env.get("INDUSTRYAI_EMAIL_WEBHOOK_SECRET") ?? "";
+  if (notificationUrl && notificationSecret.length >= 32) {
+    let validNotificationUrl = false;
+    try {
+      const parsedNotificationUrl = new URL(notificationUrl);
+      validNotificationUrl =
+        parsedNotificationUrl.protocol === "https:" &&
+        parsedNotificationUrl.hostname === "script.google.com" &&
+        parsedNotificationUrl.pathname.startsWith("/macros/s/") &&
+        parsedNotificationUrl.pathname.endsWith("/exec");
+    } catch {
+      validNotificationUrl = false;
+    }
+
+    if (validNotificationUrl) {
+      try {
+        const notificationResponse = await fetch(notificationUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            secret: notificationSecret,
+            reference: inserted.id,
+            name: name,
+            email: normalizedEmail,
+            subject: subject,
+            message: message,
+          }),
+          signal: AbortSignal.timeout(10000),
+        });
+        const notificationResult = await notificationResponse.json().catch(() => null);
+        if (!notificationResponse.ok || notificationResult?.ok !== true) {
+          console.error("Contact email notification was not confirmed.");
+        }
+      } catch {
+        console.error("Contact email notification request failed.");
+      }
+    } else {
+      console.error("Contact email notification URL is invalid.");
+    }
+  } else {
+    console.warn("Contact email notification is not configured; request remains in admin inbox.");
   }
 
   return jsonResponse({ success: true, reference: inserted.id }, 201);
