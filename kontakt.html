@@ -156,10 +156,16 @@
           setCaptchaStatus("Die Prüfung ist abgelaufen. Bitte erneut bestätigen.");
           updateSubmit();
         },
-        "error-callback":function(){
+        "error-callback":function(errorCode){
           token="";
-          setCaptchaStatus("Die Prüfung ist fehlgeschlagen. Bitte Seite neu laden oder den Bot-Schutz erneut laden.");
+          captchaLoading=false;
+          widgetId=null;
+          activateCaptcha.hidden=false;
+          activateCaptcha.disabled=false;
+          activateCaptcha.textContent="Bot-Schutz erneut laden";
+          setCaptchaStatus("Cloudflare-Prüfung fehlgeschlagen (Fehlercode: "+String(errorCode||"unbekannt")+"). Bitte den Code notieren und den Bot-Schutz erneut laden.");
           updateSubmit();
+          return true;
         }
       });
       activateCaptcha.hidden=true;
