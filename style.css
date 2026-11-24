@@ -2648,3 +2648,7 @@ footer .logo img {
   mix-blend-mode: lighten;
   background: transparent;
 }
+
+
+/* Transparentes Original-Logo: keine Mischmodi mehr */
+header .logo img, footer .logo img { mix-blend-mode: normal !important; background: transparent !important; }
