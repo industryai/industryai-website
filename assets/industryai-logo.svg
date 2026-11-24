@@ -1,14 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="112" viewBox="0 0 520 112" role="img" aria-labelledby="title desc">
-  <title id="title">INDUSTRYAI</title><desc id="desc">INDUSTRYAI – Industrial Intelligence</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#173b55"/><stop offset="1" stop-color="#071321"/></linearGradient>
-    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#42d8ed"/><stop offset="1" stop-color="#078acb"/></linearGradient>
-  </defs>
-  <rect x="3" y="3" width="106" height="106" rx="23" fill="url(#bg)" stroke="url(#cyan)" stroke-width="2.5"/>
-  <circle cx="56" cy="54" r="39" fill="none" stroke="#a9bac9" stroke-width="4" stroke-dasharray="9 5" opacity=".85"/>
-  <path d="M28 78V36h13v42M23 36h23M23 78h23" fill="none" stroke="#f4f8fb" stroke-width="6" stroke-linecap="round"/>
-  <path d="m46 78 20-42 20 42M54 63h25" fill="none" stroke="#42d8ed" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M70 23v-8h8v8M82 27v-12h8v16" fill="none" stroke="#a9bac9" stroke-width="3" stroke-linejoin="round"/>
-  <text x="132" y="58" fill="#f2f7fb" font-family="Arial,Helvetica,sans-serif" font-size="39" font-weight="800" letter-spacing="-.8">INDUSTRY<tspan fill="#42d8ed">AI</tspan></text>
-  <text x="135" y="86" fill="#42d8ed" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="3.2">INDUSTRIAL INTELLIGENCE</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+<title id="title">INDUSTRYAI</title>
+<desc id="desc">INDUSTRYAI – Industrial Intelligence</desc>
+<defs>
+  <linearGradient id="silver" x1="0" y1="0" x2="0.15" y2="1"><stop stop-color="#ffffff"/><stop offset=".48" stop-color="#cbd5df"/><stop offset="1" stop-color="#8797a8"/></linearGradient>
+  <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#62efff"/><stop offset=".55" stop-color="#08c9e7"/><stop offset="1" stop-color="#0786bd"/></linearGradient>
+  <filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<!-- Industrial gear mark -->
+<path d="M139 18 157 18 166 39 185 45 204 33 217 46 208 67 217 84 240 91 240 109 218 118 212 137 224 156 211 170 190 161 173 170 166 194 148 194 139 171 120 165 101 177 87 164 96 143 87 126 64 118 64 100 87 91 93 72 81 53 94 39 115 48 132 39Z" fill="none" stroke="url(#silver)" stroke-width="11" stroke-linejoin="round"/>
+<circle cx="154" cy="108" r="70" fill="none" stroke="#9aabba" stroke-width="5" stroke-dasharray="5 10" opacity=".65"/>
+<!-- Factory mark -->
+<path d="M103 76V52l22 12V52l22 12V44h12v44h-56V76Zm8 12V76h9v12m9 0V76h9v12m9 0V76h9v12" fill="url(#silver)" opacity=".95"/>
+<!-- IA monogram -->
+<text x="78" y="220" font-family="Arial,Helvetica,sans-serif" font-size="145" font-weight="900" letter-spacing="-15" fill="url(#silver)">IA</text>
+<path d="M74 246C128 283 210 265 252 193" fill="none" stroke="url(#cyan)" stroke-width="15" stroke-linecap="round" filter="url(#glow)"/>
+<path d="M88 260C151 287 215 270 260 218" fill="none" stroke="#8496a8" stroke-width="5" opacity=".7"/>
+<path d="M292 35V265" stroke="url(#cyan)" stroke-width="3" filter="url(#glow)"/>
+<!-- Wordmark -->
+<text x="345" y="164" font-family="Arial,Helvetica,sans-serif" font-size="112" font-weight="800" letter-spacing="-3" fill="url(#silver)">INDUSTRY<tspan fill="url(#cyan)">AI</tspan></text>
+<path d="M350 207H410M1080 207H1140" stroke="url(#cyan)" stroke-width="6"/>
+<text x="438" y="220" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700" letter-spacing="10" fill="#e2e9ef">INDUSTRIAL INTELLIGENCE</text>
 </svg>
