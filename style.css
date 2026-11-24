@@ -2620,3 +2620,23 @@ footer .logo img {
   height: auto;
   object-fit: contain;
 }
+
+
+/* INDUSTRYAI – neue Wortmarke */
+header .logo img {
+  display: block;
+  width: 235px;
+  max-width: min(235px, 42vw);
+  height: auto;
+  object-fit: contain;
+}
+footer .logo img {
+  display: block;
+  width: 210px;
+  max-width: min(210px, 70vw);
+  height: auto;
+  object-fit: contain;
+}
+@media (max-width: 900px) {
+  header .logo img { width: 190px; max-width: 38vw; }
+}
