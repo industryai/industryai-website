@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
-<title id="title">INDUSTRYAI</title>
-<desc id="desc">INDUSTRYAI – Industrial Intelligence</desc>
+<title id="title">INDUSTRYAI</title><desc id="desc">INDUSTRYAI – Industrial Intelligence</desc>
 <defs>
-  <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffffff"/><stop offset=".48" stop-color="#cbd5df"/><stop offset="1" stop-color="#8293a5"/></linearGradient>
-  <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#66f2ff"/><stop offset=".55" stop-color="#12d5eb"/><stop offset="1" stop-color="#078bbd"/></linearGradient>
-  <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<linearGradient id="silver" x1="0" y1="0" x2="0.15" y2="1"><stop stop-color="#fff"/><stop offset=".48" stop-color="#cbd5df"/><stop offset="1" stop-color="#8797a8"/></linearGradient>
+<linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#62efff"/><stop offset=".55" stop-color="#08c9e7"/><stop offset="1" stop-color="#0786bd"/></linearGradient>
+<filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
-<!-- Geometric IA mark with a restrained gear detail -->
-<path d="M130 28l11-9 13 9 14-3 8-13 15 1 6 14 13 7 14-5 11 10-5 14 7 12 14 5-1 15-14 6-6 13 5 14-11 10-14-6-13 7-5 14-15 1-7-13-14-4-12 8-12-9 3-15-8-11-14-3-2-15 13-8 3-14-8-12 8-12 15 3 11-8z" fill="none" stroke="url(#metal)" stroke-width="5" opacity=".88" transform="translate(7 0) scale(.82)"/>
-<text x="50" y="218" font-family="Arial,Helvetica,sans-serif" font-size="174" font-weight="900" letter-spacing="-19" fill="url(#metal)">IA</text>
-<path d="M38 248C100 292 216 266 269 171" fill="none" stroke="url(#teal)" stroke-width="13" stroke-linecap="round" filter="url(#softGlow)"/>
-<path d="M54 263C127 298 220 274 278 205" fill="none" stroke="#9aaaba" stroke-width="4" opacity=".65"/>
-<path d="M310 35V265" stroke="url(#teal)" stroke-width="3" filter="url(#softGlow)"/>
-<text x="360" y="157" font-family="Arial,Helvetica,sans-serif" font-size="112" font-weight="800" letter-spacing="-3" fill="url(#metal)">INDUSTRY<tspan fill="url(#teal)">AI</tspan></text>
-<path d="M365 207H420M1080 207H1135" stroke="url(#teal)" stroke-width="5"/>
-<text x="444" y="220" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="700" letter-spacing="9" fill="#e3eaf0">INDUSTRIAL INTELLIGENCE</text>
+<path d="M139 18 157 18 166 39 185 45 204 33 217 46 208 67 217 84 240 91 240 109 218 118 212 137 224 156 211 170 190 161 173 170 166 194 148 194 139 171 120 165 101 177 87 164 96 143 87 126 64 118 64 100 87 91 93 72 81 53 94 39 115 48 132 39Z" fill="none" stroke="url(#silver)" stroke-width="11" stroke-linejoin="round"/>
+<circle cx="154" cy="108" r="70" fill="none" stroke="#9aabba" stroke-width="5" stroke-dasharray="5 10" opacity=".65"/>
+<path d="M103 76V52l22 12V52l22 12V44h12v44h-56V76Zm8 12V76h9v12m9 0V76h9v12m9 0V76h9v12" fill="url(#silver)" opacity=".95"/>
+<text x="78" y="220" font-family="Arial,Helvetica,sans-serif" font-size="145" font-weight="900" letter-spacing="-15" fill="url(#silver)">IA</text>
+<path d="M74 246C128 283 210 265 252 193" fill="none" stroke="url(#cyan)" stroke-width="15" stroke-linecap="round" filter="url(#glow)"/>
+<path d="M88 260C151 287 215 270 260 218" fill="none" stroke="#8496a8" stroke-width="5" opacity=".7"/>
+<path d="M292 35V265" stroke="url(#cyan)" stroke-width="3" filter="url(#glow)"/>
+<text x="345" y="164" font-family="Arial,Helvetica,sans-serif" font-size="112" font-weight="800" letter-spacing="-3" fill="url(#silver)">INDUSTRY<tspan fill="url(#cyan)">AI</tspan></text>
+<path d="M350 207H410M1080 207H1140" stroke="url(#cyan)" stroke-width="6"/>
+<text x="438" y="220" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700" letter-spacing="10" fill="#e2e9ef">INDUSTRIAL INTELLIGENCE</text>
 </svg>
