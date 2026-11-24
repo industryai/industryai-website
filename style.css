@@ -2640,3 +2640,11 @@ footer .logo img {
 @media (max-width: 900px) {
   header .logo img { width: 190px; max-width: 38vw; }
 }
+
+
+/* Original-Logo: dunkle Bildfläche optisch mit dem Header verschmelzen lassen */
+header .logo img,
+footer .logo img {
+  mix-blend-mode: screen;
+  background: transparent;
+}
