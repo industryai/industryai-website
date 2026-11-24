@@ -2645,6 +2645,6 @@ footer .logo img {
 /* Original-Logo: dunkle Bildfläche optisch mit dem Header verschmelzen lassen */
 header .logo img,
 footer .logo img {
-  mix-blend-mode: screen;
+  mix-blend-mode: lighten;
   background: transparent;
 }
