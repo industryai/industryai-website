@@ -2604,3 +2604,19 @@ header nav a.nav-button[aria-current="page"]{
   background:rgba(66,216,237,.12)!important;
   color:#42d8ed!important;
 }
+
+/* Einheitliche SVG-Wortmarke in Header und Footer */
+header .logo img {
+  display: block;
+  width: 210px;
+  max-width: min(210px, 48vw);
+  height: auto;
+  object-fit: contain;
+}
+footer .logo img {
+  display: block;
+  width: 190px;
+  max-width: min(190px, 70vw);
+  height: auto;
+  object-fit: contain;
+}
