@@ -101,7 +101,7 @@
 <option value="handel und dienstleistungen">Handel und Dienstleistungen</option>
 </select>
 </div>
-<p class="uw-results" id="uw-results" aria-live="polite">1 Eintrag – einschließlich Musterprofil</p>
+<p class="uw-results" id="uw-results" aria-live="polite">Unternehmensprofile werden vorbereitet …</p>
 <div class="uw-grid" id="uw-grid">
 <p class="uw-results" id="uw-loading" aria-live="polite">Unternehmensprofile werden geladen …</p>
 <div class="uw-empty" id="uw-empty"><strong>Keine passenden Unternehmen gefunden.</strong>Ändern Sie Ihre Suchbegriffe oder wählen Sie eine andere Branche.</div>
@@ -124,18 +124,19 @@
  const loading=document.getElementById("uw-loading");
  let cards=[];
  const escapeHTML=value=>String(value??"").replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+ const safeUrl=(value,kind)=>{const url=String(value??"").trim();if(!url||url.startsWith("//"))return "";if(/^https:\/\//i.test(url))return url;if(/^[a-z][a-z0-9+.-]*:/i.test(url))return "";if(kind==="image"&&/^(?:\.\/|\/)?(?:images|assets)\//i.test(url))return url;if(kind==="link"&&/^(?:\.\/|\/)?[a-z0-9_./-]+\.html(?:[?#].*)?$/i.test(url))return url;return "";};
  function renderCard(company){
   const isDemo=company.status==="demo";
   const name=escapeHTML(company.name);
-  const href=escapeHTML(company.profile||"#");
-  const image=escapeHTML(company.image||"");
+  const href=escapeHTML(safeUrl(company.profile,"link")||"#");
+  const image=escapeHTML(safeUrl(company.image,"image"));
   const alt=escapeHTML(company.imageAlt||"Unternehmensbild");
   const category=escapeHTML(company.category||"");
   const location=escapeHTML(company.location||"");
   const description=escapeHTML(company.description||"");
   const tag=escapeHTML(company.tag||(isDemo?"MUSTERPROFIL · BEISPIEL":"UNTERNEHMEN"));
   const action=isDemo?"Musterprofil ansehen ↗":"Unternehmensprofil ansehen ↗";
-  return '<a class="uw-card" data-sector="'+category+'" data-search="'+escapeHTML([company.name,company.location,company.categoryLabel,company.description].join(" "))+'" href="'+href+'">'+
+  return '<a class="uw-card" data-status="'+(isDemo?"demo":"published")+'" data-sector="'+category+'" data-search="'+escapeHTML([company.name,company.location,company.categoryLabel,company.description].join(" "))+'" href="'+href+'">'+
    (image?'<img src="'+image+'" alt="'+alt+'" loading="lazy">':'')+
    '<div class="uw-card-body"><span class="uw-tag">'+tag+'</span><h3>'+name+'</h3>'+
    (location?'<p><strong>Standort:</strong> '+location+'</p>':'')+
@@ -151,7 +152,8 @@
    card.hidden=!show;
    if(show)visible++;
   });
-  results.textContent=visible+" "+(visible===1?"Eintrag":"Einträge")+" gefunden. Musterprofile sind ausdrücklich gekennzeichnet.";
+  const demoVisible=cards.filter(card=>!card.hidden&&card.dataset.status==="demo").length;
+  results.textContent=visible+" "+(visible===1?"Eintrag":"Einträge")+" gefunden"+(demoVisible?" – davon "+demoVisible+" ausdrücklich gekennzeichnetes Musterprofil":"")+". Freigegebene Unternehmensprofile werden separat angezeigt.";
   empty.style.display=visible?"none":"block";
  }
  search.addEventListener("input",filter);
@@ -195,7 +197,7 @@
    // Freigegebene Unternehmensprofile aus Supabase ergänzen.
    loadPublishedProfiles()
     .then(liveData=>{
-     const published=Array.isArray(liveData.entries)?liveData.entries.filter(item=>item&&item.status==="published"):[];
+     const published=Array.isArray(liveData.entries)?liveData.entries.filter(item=>item&&item.status==="published"&&String(item.name||"").trim()&&safeUrl(item.profile,"link")):[];
      if(published.length){
       grid.insertAdjacentHTML("beforeend",published.map(renderCard).join(""));
       cards=Array.from(grid.querySelectorAll(".uw-card"));
