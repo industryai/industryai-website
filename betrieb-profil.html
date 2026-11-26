@@ -34,6 +34,19 @@
 @media(max-width:720px){.profile-layout{grid-template-columns:1fr;padding:24px 6%}.profile-flow{padding-left:6%;padding-right:6%}}
 @media(max-width:460px){.flow-grid{grid-template-columns:1fr}}
 </style>
+<style>
+.profile-components{max-width:1050px;margin:0 auto;padding:20px 7% 30px}
+.profile-components-head{text-align:center;max-width:760px;margin:0 auto 20px}
+.profile-components-head h2{font:800 clamp(25px,3vw,34px)/1.2 Manrope,sans-serif;color:#f4f8fc;margin:10px 0}
+.profile-components-head p{color:#b6c7d6;line-height:1.75}
+.profile-components-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.profile-components-grid article{padding:18px;border:1px solid rgba(66,216,237,.18);border-radius:12px;background:#0d2234}
+.profile-components-grid article>span{color:#42d8ed;font-size:11px;font-weight:800;letter-spacing:1px}
+.profile-components-grid h3{color:#f4f8fc;margin:8px 0;font:700 17px Manrope,sans-serif}
+.profile-components-grid p{margin:0;color:#b6c7d6;font-size:13px;line-height:1.7}
+.profile-components-note{margin:16px auto 0;max-width:850px;text-align:center;color:#9fb3c5;font-size:12px;line-height:1.7}
+@media(max-width:560px){.profile-components{padding-left:6%;padding-right:6%}.profile-components-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <header>
@@ -77,6 +90,21 @@
 <div class="flow-step"><span class="profile-label">04 · ENTSCHEIDEN</span><strong>Einstieg finden</strong><p>Prüfe passende Ausbildungsplätze, Stellen oder Praktikumsmöglichkeiten.</p></div>
 </div>
 </div>
+
+<section class="profile-components" aria-label="Mögliche Inhalte eines Unternehmensprofils">
+ <div class="profile-components-head">
+  <div class="profile-label">MÖGLICHE PROFILINHALTE</div>
+  <h2>Ein Betrieb. Viele wichtige Einblicke.</h2>
+  <p>Ein Unternehmensprofil kann Informationen bündeln, die bei der Orientierung und bei der Entscheidung für einen Arbeitgeber helfen.</p>
+ </div>
+ <div class="profile-components-grid">
+  <article><span>01</span><h3>Unternehmen & Branche</h3><p>Standort, Tätigkeitsbereiche, Produkte und Leistungen des Betriebs.</p></article>
+  <article><span>02</span><h3>Arbeitsumgebung</h3><p>Maschinen, Technologien, Arbeitsplätze und typische Abläufe im Betrieb.</p></article>
+  <article><span>03</span><h3>Berufe & Entwicklung</h3><p>Ausbildungsberufe, Aufgaben, Einarbeitung und mögliche Entwicklungsschritte.</p></article>
+  <article><span>04</span><h3>Einstieg & Kontakt</h3><p>Freigegebene Informationen zu Praktika, Ausbildung, offenen Stellen und Kontaktwegen.</p></article>
+ </div>
+ <p class="profile-components-note">Welche Inhalte tatsächlich angezeigt werden, hängt von den Angaben des Unternehmens und dessen Freigabe ab. Beispielangebote auf dieser Seite sind keine echten Ausschreibungen.</p>
+</section>
 
 <section class="profile-layout">
 <div class="profile-card">
