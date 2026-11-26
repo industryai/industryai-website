@@ -30,6 +30,23 @@
 .demo-panel{display:none;color:#c4d3de;font-size:13px;line-height:1.8}.demo-panel.active{display:block}.demo-panel h3{color:#f4f8fc;font:700 21px Manrope,sans-serif;margin:0 0 8px}.demo-panel p{margin:0 0 14px}.demo-panel ul{margin:0;padding-left:19px}.demo-contact{padding:58px 7%;text-align:center;background:linear-gradient(120deg,#0c2639,#071321)}.demo-contact h2{color:#f4f8fc;font:800 clamp(27px,3.5vw,38px) Manrope,sans-serif;margin:0 0 12px}.demo-contact p{max-width:720px;color:#b6c7d6;margin:0 auto 22px;line-height:1.8;font-size:14px}.demo-contact a{display:inline-block;padding:13px 20px;border-radius:5px;background:#42d8ed;color:#061421;font-weight:800;font-size:13px;text-decoration:none}
 @media(max-width:800px){.demo-grid{grid-template-columns:1fr}.demo-section{padding:48px 6%}.demo-hero{padding:48px 6%}}
 @media(max-width:520px){.preview-site{grid-template-columns:1fr}.preview-visual{height:75px}.demo-interactive{padding:20px 16px}.demo-card-top{padding:17px 17px 12px}.demo-card h3{margin-left:17px;margin-right:17px}.demo-card>p{margin-left:17px;margin-right:17px}}
+
+.calc-section{padding:62px 7%;background:linear-gradient(180deg,#071321,#0a1b2b)}
+.calc-box{max-width:900px;margin:auto;padding:28px;border:1px solid rgba(66,216,237,.35);border-radius:12px;background:linear-gradient(145deg,#11283c,#0b1c2c)}
+.calc-intro{color:#b6c7d6;font-size:13px;line-height:1.8;margin:0 0 22px}
+.calc-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.calc-option{display:flex;align-items:flex-start;gap:11px;padding:15px;border:1px solid #31566c;border-radius:8px;background:#091d2d;color:#dce8f0;font-size:13px;cursor:pointer}
+.calc-option input{margin-top:3px;accent-color:#42d8ed;width:16px;height:16px;flex:0 0 auto}
+.calc-option small{display:block;color:#8fa6b8;font-size:10px;line-height:1.5;margin-top:4px}
+.calc-result{margin-top:22px;padding:20px;border:1px solid rgba(66,216,237,.3);border-radius:8px;background:#071522}
+.calc-result-label{color:#42d8ed;font-size:10px;font-weight:800;letter-spacing:1.5px}
+.calc-range{color:#f4f8fc;font:800 clamp(27px,4vw,38px) Manrope,sans-serif;margin:7px 0}
+.calc-breakdown{color:#b6c7d6;font-size:12px;line-height:1.8;white-space:pre-line}
+.calc-disclaimer{color:#8fa6b8;font-size:10px;line-height:1.7;margin:14px 0 0}
+.calc-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.calc-actions a,.calc-actions button{display:inline-block;padding:12px 16px;border:1px solid #42d8ed;border-radius:5px;background:#42d8ed;color:#061421;font:700 12px Manrope,sans-serif;text-decoration:none;cursor:pointer}
+.calc-actions button{background:transparent;color:#42d8ed}
+@media(max-width:620px){.calc-section{padding:48px 6%}.calc-box{padding:20px 16px}.calc-options{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -64,6 +81,25 @@
 <div class="demo-panel" data-demo-panel="recruit"><h3>Interessenten einfacher erreichen.</h3><p>Digitale Karriereauftritte und strukturierte Bewerbungswege helfen, den Einstieg in den Kontakt mit potenziellen Mitarbeitenden zu erleichtern.</p><ul><li>Karriere- und Bewerbungsseiten</li><li>Arbeitgeberpräsentation</li><li>Strukturierte Kontakt- und Bewerbungsanfragen</li></ul></div>
 <div class="demo-panel" data-demo-panel="process"><h3>Wiederkehrende Abläufe sinnvoll vereinfachen.</h3><p>Digitale Prozesse können Informationen erfassen, weiterleiten und Teams bei Routineaufgaben entlasten.</p><ul><li>Digitale Anfrage- und Formularprozesse</li><li>Automatische Benachrichtigungen</li><li>Verknüpfung geeigneter Systeme und Datenquellen</li></ul></div>
 </div></div></section>
+
+<section class="calc-section" id="project-calculator">
+ <div class="demo-wrap">
+  <div class="demo-heading"><div class="demo-kicker">ERSTE PROJEKTORIENTIERUNG</div><h2>Was soll Ihr Projekt können?</h2><p>Wählen Sie die gewünschten Leistungsbereiche aus. Der Kalkulator addiert die veröffentlichten Preisorientierungen für die Bereiche, für die bereits Richtwerte vorliegen.</p></div>
+  <div class="calc-box">
+   <p class="calc-intro">Wählen Sie einen oder mehrere Bereiche. Sie erhalten eine unverbindliche erste Kostenspanne und können Ihre Auswahl anschließend als Projektanfrage vorbereiten.</p>
+   <div class="calc-options">
+    <label class="calc-option"><input type="checkbox" value="website"><span><b>Website & Online-Auftritt</b><small>Unternehmenswebsite, Landingpage und digitale Sichtbarkeit · Richtwert: 400–1.800 €</small></span></label>
+    <label class="calc-option"><input type="checkbox" value="recruiting"><span><b>Recruiting & Employer Branding</b><small>Karriereseite, Bewerbungsauftritt und Arbeitgeberpräsentation · Richtwert: 250–1.500 €</small></span></label>
+    <label class="calc-option"><input type="checkbox" value="app"><span><b>Individuelle App & Anwendung</b><small>Mitarbeiter-App, Kunden-App oder Webanwendung · Richtwert: 800–2.500 €</small></span></label>
+    <label class="calc-option"><input type="checkbox" value="automation"><span><b>Automatisierung & digitale Prozesse</b><small>Individuelle Abläufe und Systemverknüpfungen · Aufwand wird separat ermittelt</small></span></label>
+   </div>
+   <div class="calc-result" aria-live="polite"><div class="calc-result-label">IHRE UNVERBINDLICHE ORIENTIERUNG</div><div class="calc-range" id="calc-range">Noch keine Auswahl</div><div class="calc-breakdown" id="calc-breakdown">Wählen Sie oben mindestens einen Leistungsbereich aus.</div>
+    <p class="calc-disclaimer">Die angezeigte Spanne addiert die auf der Leistungsseite veröffentlichten Richtwerte. Sie ist kein Angebot und keine verbindliche Preiszusage. Automatisierungen, Sonderfunktionen, laufende Kosten und umfangreichere Anforderungen werden individuell kalkuliert. Die tatsächlichen Kosten können abweichen.</p>
+    <div class="calc-actions"><a id="calc-email" href="mailto:info@industryai-solutions.de?subject=Projektanfrage%20an%20INDUSTRYAI">Auswahl als Anfrage vorbereiten ↗</a><button type="button" id="calc-reset">Auswahl zurücksetzen</button></div>
+   </div>
+  </div>
+ </div>
+</section>
 <section class="demo-contact"><div class="demo-wrap"><h2>Sie haben ein konkretes Vorhaben?</h2><p>Wir besprechen mit Ihnen, welche digitale Lösung zu Ihrem Unternehmen passt – vom ersten Konzept bis zur individuellen Umsetzung.</p><a href="mailto:info@industryai-solutions.de?subject=Projektanfrage%20an%20INDUSTRYAI">Projekt besprechen ↗</a></div></section>
 </main>
 <footer>
@@ -73,6 +109,27 @@
 </footer>
 <script>
 (function(){
+(function(){
+ const prices={website:{label:"Website & Online-Auftritt",min:400,max:1800},recruiting:{label:"Recruiting & Employer Branding",min:250,max:1500},app:{label:"Individuelle App & Anwendung",min:800,max:2500},automation:{label:"Automatisierung & digitale Prozesse",min:null,max:null}};
+ const checks=Array.from(document.querySelectorAll(".calc-option input"));
+ const range=document.getElementById("calc-range"),breakdown=document.getElementById("calc-breakdown"),email=document.getElementById("calc-email"),reset=document.getElementById("calc-reset");
+ const euro=value=>new Intl.NumberFormat("de-DE",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(value);
+ function update(){
+  const selected=checks.filter(item=>item.checked).map(item=>prices[item.value]);
+  if(!selected.length){range.textContent="Noch keine Auswahl";breakdown.textContent="Wählen Sie oben mindestens einen Leistungsbereich aus.";email.href="mailto:info@industryai-solutions.de?subject=Projektanfrage%20an%20INDUSTRYAI";return;}
+  const priced=selected.filter(item=>item.min!==null),hasAutomation=selected.some(item=>item.min===null);
+  const min=priced.reduce((sum,item)=>sum+item.min,0),max=priced.reduce((sum,item)=>sum+item.max,0);
+  const lines=selected.map(item=>item.min===null?item.label+": individuelle Aufwandsermittlung":item.label+": "+euro(item.min)+"–"+euro(item.max));
+  range.textContent=priced.length?euro(min)+" – "+euro(max)+(hasAutomation?" + ggf. Automatisierung":""):"Individuelle Kalkulation";
+  if(hasAutomation)lines.push("Automatisierung wird nach Prozessumfang und technischen Voraussetzungen separat kalkuliert.");
+  breakdown.textContent=lines.join("\n");
+  const body="Guten Tag INDUSTRYAI,\n\nich interessiere mich für folgende Leistungen:\n"+lines.map(line=>"– "+line).join("\n")+"\n\nBitte kontaktieren Sie mich für eine unverbindliche Abstimmung.\n\nName / Unternehmen:\nTelefon (optional):\n";
+  email.href="mailto:info@industryai-solutions.de?subject="+encodeURIComponent("Projektanfrage an INDUSTRYAI")+"&body="+encodeURIComponent(body);
+ }
+ checks.forEach(item=>item.addEventListener("change",update));
+ reset.addEventListener("click",()=>{checks.forEach(item=>item.checked=false);update();});
+ update();
+})();
  const buttons=Array.from(document.querySelectorAll("[data-demo-tab]"));
  const panels=Array.from(document.querySelectorAll("[data-demo-panel]"));
  buttons.forEach(button=>button.addEventListener("click",()=>{
