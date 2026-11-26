@@ -1,7 +1,7 @@
 import { createClient } from "npm:@supabase/supabase-js@2.119.2";
 
-const ALLOWED_ORIGIN = "https://industryai.github.io";
-const EXPECTED_HOSTNAME = "industryai.github.io";
+const ALLOWED_ORIGIN = "https://industryai-solutions.de";
+const EXPECTED_HOSTNAME = "industryai-solutions.de";
 const EXPECTED_ACTION = "contact_message_submit";
 const MAX_BODY_BYTES = 8_000;
 // Public Google Apps Script deployment URL; the webhook secret remains in Supabase Secrets.
