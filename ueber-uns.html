@@ -22,6 +22,65 @@
 
 /* CTA-Überschrift auf der Über-uns-Seite wie die übrigen Abschnittsüberschriften zentrieren */
 .ia-about-cta .ia-about-cta-heading{width:100%;max-width:800px;margin:0 auto 12px;text-align:center}
+
+/* Über-uns-Seite – klarere visuelle Hierarchie und responsive Editorial-Gestaltung */
+.ia-about-hero-premium{padding:64px 6% 68px;text-align:left;background:radial-gradient(ellipse at 78% 40%,rgba(0,174,210,.17),transparent 42%),linear-gradient(115deg,#061421 0%,#0b2032 60%,#0c2a3b 100%)}
+.ia-about-hero-layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(390px,.92fr);align-items:center;gap:56px}
+.ia-about-hero-premium .ia-about-inner{max-width:620px;margin:0}
+.ia-about-hero-premium .ia-about-eyebrow{margin-bottom:18px}
+.ia-about-hero-premium h1{font-size:clamp(42px,5vw,64px);line-height:1.06;letter-spacing:-2px;margin-bottom:22px;text-wrap:balance}
+.ia-about-hero-premium h1 span{display:block}
+.ia-about-hero-premium p{max-width:570px;margin:0;color:#c2d1dd;font-size:16px;line-height:1.85}
+.ia-about-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.ia-about-hero-primary,.ia-about-hero-secondary{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:7px;font-size:13px;font-weight:800;text-decoration:none;transition:.2s ease}
+.ia-about-hero-primary{background:#42d8ed;color:#061421;border:1px solid #42d8ed}
+.ia-about-hero-secondary{background:rgba(8,27,42,.55);color:#e8f2f8;border:1px solid rgba(150,190,210,.42)}
+.ia-about-hero-primary:hover{background:#8ceefa;transform:translateY(-2px)}
+.ia-about-hero-secondary:hover{border-color:#42d8ed;color:#42d8ed;transform:translateY(-2px)}
+.ia-about-hero-proof{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:28px;color:#8fa9bb;font-size:9px;font-weight:800;letter-spacing:1.5px}
+.ia-about-hero-proof i{width:4px;height:4px;border-radius:50%;background:#42d8ed}
+.ia-about-hero-visual{position:relative;min-height:370px;overflow:hidden;border:1px solid rgba(66,216,237,.42);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.28)}
+.ia-about-hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,15,25,.02) 30%,rgba(3,15,25,.86) 100%),linear-gradient(90deg,rgba(3,15,25,.16),transparent 70%);pointer-events:none}
+.ia-about-hero-visual img{display:block;width:100%;height:100%;min-height:370px;object-fit:cover}
+.ia-about-visual-caption{position:absolute;z-index:1;left:24px;right:24px;bottom:22px;display:flex;flex-direction:column;gap:7px}
+.ia-about-visual-caption span{color:#42d8ed;font-size:9px;font-weight:800;letter-spacing:2px}
+.ia-about-visual-caption strong{color:#f4f8fc;font:700 20px Manrope,sans-serif}
+.ia-about-direction{padding:76px 7%;background:linear-gradient(180deg,#0a1b2b,#081725)}
+.ia-about-direction-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.7fr);gap:54px;align-items:center;max-width:1120px;margin:auto}
+.ia-about-direction-copy .ia-about-eyebrow{margin-bottom:13px}
+.ia-about-direction-copy h2{max-width:720px;color:#f4f8fc;font:800 clamp(30px,3.8vw,44px)/1.18 Manrope,sans-serif;letter-spacing:-.8px;margin:0 0 22px;text-wrap:balance}
+.ia-about-direction-copy p{color:#bdcbd7;font-size:14px;line-height:1.9;margin:0 0 14px;max-width:760px}
+.ia-about-direction-note{position:relative;padding:30px 26px;border:1px solid rgba(66,216,237,.38);border-radius:14px;background:linear-gradient(145deg,rgba(20,57,77,.88),rgba(8,27,42,.96));box-shadow:0 18px 45px rgba(0,0,0,.18)}
+.ia-about-note-mark{display:grid;place-items:center;width:48px;height:48px;margin-bottom:24px;border:1px solid #42d8ed;border-radius:12px;color:#42d8ed;font:800 17px Manrope,sans-serif;box-shadow:0 0 24px rgba(66,216,237,.12)}
+.ia-about-note-label{display:block;margin-bottom:10px;color:#42d8ed;font-size:9px;font-weight:800;letter-spacing:2px}
+.ia-about-direction-note strong{display:block;color:#f4f8fc;font:700 21px/1.3 Manrope,sans-serif;margin-bottom:12px}
+.ia-about-direction-note p{color:#b6c7d6;font-size:13px;line-height:1.75;margin:0}
+.ia-about-philosophy .ia-about-card,.ia-about-audience .ia-about-card,.ia-about-services .ia-about-card{height:100%;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.ia-about-philosophy .ia-about-card:hover,.ia-about-audience .ia-about-card:hover,.ia-about-services .ia-about-card:hover{transform:translateY(-4px);border-color:rgba(66,216,237,.72);box-shadow:0 14px 32px rgba(0,0,0,.18)}
+.ia-about-philosophy .ia-about-heading,.ia-about-audience .ia-about-heading,.ia-about-services .ia-about-heading{margin-bottom:38px}
+.ia-about-process-section{background:linear-gradient(180deg,#091a2a,#071321)}
+.ia-about-process{gap:12px}
+.ia-about-step{min-height:178px;border:1px solid rgba(66,216,237,.2);border-left:2px solid #42d8ed;border-radius:0 10px 10px 0;background:linear-gradient(145deg,#11283c,#0b1c2c)}
+.ia-about-step h3{font-family:Manrope,sans-serif}
+@media(max-width:900px){
+ .ia-about-hero-layout{grid-template-columns:1fr;gap:34px}
+ .ia-about-hero-premium .ia-about-inner{max-width:760px}
+ .ia-about-hero-visual{min-height:300px}
+ .ia-about-hero-visual img{min-height:300px;max-height:390px}
+ .ia-about-direction-grid{grid-template-columns:1fr;gap:28px}
+ .ia-about-direction-note{max-width:650px}
+}
+@media(max-width:560px){
+ .ia-about-hero-premium{padding:48px 6% 52px}
+ .ia-about-hero-premium h1{font-size:clamp(36px,10vw,48px);letter-spacing:-1.2px}
+ .ia-about-hero-premium p{font-size:14px}
+ .ia-about-hero-visual,.ia-about-hero-visual img{min-height:230px}
+ .ia-about-hero-proof{gap:7px;font-size:8px;letter-spacing:1px}
+ .ia-about-direction{padding:54px 6%}
+ .ia-about-direction-copy h2{font-size:30px}
+ .ia-about-direction-note{padding:24px 21px}
+}
+
 </style>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20261124-4">
 </head>
@@ -47,17 +106,50 @@
 </nav>
 </header>
 <main>
-<section class="ia-about-hero"><div class="ia-about-inner"><div class="ia-about-eyebrow">DAS IST INDUSTRYAI</div><h1>Digitale Ideen.<br><span>Intelligente Lösungen. Sichtbare Ergebnisse.</span></h1><p>INDUSTRYAI unterstützt Unternehmen bei ihrer digitalen Entwicklung – mit modernen Websites, individuellen Apps, Recruiting-Lösungen und intelligenten Automatisierungskonzepten. Wir verbinden Technologie mit einem klaren Blick für die Anforderungen des Geschäftsalltags.</p></div></section>
-<section class="ia-about-section"><div class="ia-about-wrap"><div class="ia-about-heading"><div class="eyebrow">UNSERE AUSRICHTUNG</div><h2>Technologie muss im Alltag einen Unterschied machen.</h2></div><p class="ia-about-story">INDUSTRYAI richtet sich an kleine und mittelständische Unternehmen, die digital professioneller auftreten, neue Wege in der Mitarbeitergewinnung nutzen oder interne und externe Abläufe weiterentwickeln möchten. Wir machen digitale Möglichkeiten verständlich und entwickeln Lösungen, die sich an den tatsächlichen Zielen und Anforderungen eines Unternehmens orientieren – vom Webauftritt bis zur individuellen Anwendung.</p>
-<p class="ia-about-story">Wir verbinden Technologie, digitale Kommunikation und intelligente Lösungen. INDUSTRYAI unterstützt Unternehmen dabei, professionell online aufzutreten, eigene Apps und digitale Anwendungen einzusetzen und passende Mitarbeiter zu erreichen. Berufsorientierung und Karriereangebote ergänzen unser Angebot und bringen Menschen und Unternehmen zusammen.</p></div></section>
-<section class="ia-about-section alt"><div class="ia-about-wrap"><div class="ia-about-heading"><div class="eyebrow">UNSERE PHILOSOPHIE</div><h2>INDUSTRY INTELLIGENCE: verstehen, entwickeln, verbessern.</h2><p>Wir betrachten nicht nur einzelne digitale Maßnahmen, sondern das Zusammenspiel aus Unternehmen, Zielgruppen, Technologie und Prozessen. KI und digitale Werkzeuge unterstützen uns dabei – entscheidend bleibt eine Lösung, die zum konkreten Bedarf passt.</p></div><div class="ia-about-grid"><article class="ia-about-card"><span class="num">01 / ANALYSIEREN</span><h3>Den Bedarf verstehen.</h3><p>Wir betrachten Ziele, Zielgruppen und bestehende digitale Strukturen, bevor wir einen Lösungsansatz empfehlen.</p></article><article class="ia-about-card"><span class="num">02 / ENTWICKELN</span><h3>Passende Lösungen schaffen.</h3><p>Von Websites und Apps bis zu Recruiting und Automatisierung: Wir richten die Umsetzung an den Anforderungen des Unternehmens aus.</p></article><article class="ia-about-card"><span class="num">03 / WEITERDENKEN</span><h3>Digitales Potenzial nutzen.</h3><p>Wir suchen nach sinnvollen Möglichkeiten, digitale Präsenz, Kommunikation und Abläufe Schritt für Schritt weiterzuentwickeln.</p></article></div></div></section>
-<section class="ia-about-section"><div class="ia-about-wrap"><div class="ia-about-heading"><div class="eyebrow">TECHNOLOGIE & MENSCHEN</div><h2>Digitale Lösungen, die Menschen und Unternehmen weiterbringen.</h2><p>Technologie entfaltet ihren Nutzen dann, wenn sie Menschen erreicht und konkrete Aufgaben erleichtert. Deshalb verbinden wir digitale Unternehmenslösungen mit Recruiting und Berufsorientierung. Unternehmen erhalten Unterstützung bei ihrem digitalen Auftritt und der Mitarbeitergewinnung; Menschen bekommen Einblicke in Berufsfelder, Unternehmen und berufliche Möglichkeiten.</p></div><div class="ia-about-grid"><article class="ia-about-card"><span class="num">FÜR UNTERNEHMEN</span><h3>Passende Mitarbeiter finden.</h3><p>Arbeitgeber präsentieren ihren Betrieb, ihre Arbeitsplätze und offene Stellen.</p><p><a href="unternehmen.html" style="color:#42d8ed;font-weight:700">Unternehmensbereich ansehen →</a></p></article><article class="ia-about-card"><span class="num">FÜR ARBEITNEHMER</span><h3>Den passenden Betrieb finden.</h3><p>Schüler, Berufseinsteiger, Jobsuchende und Wechselwillige entdecken zunächst ihre Interessen und Möglichkeiten, lernen Berufsfelder kennen und finden anschließend Unternehmen und Stellen, die zu ihnen passen können.</p><p><a href="karriere-jobs.html" style="color:#42d8ed;font-weight:700">Karriere & Jobs entdecken →</a></p></article><article class="ia-about-card"><span class="num">DIE VERBINDUNG</span><h3>Mehr als eine Stellenanzeige.</h3><p>Aussagekräftige Unternehmensprofile und verständliche Berufseinblicke schaffen eine bessere Grundlage für das Zusammenfinden.</p></article></div></div></section>
-<section class="ia-about-section alt"><div class="ia-about-wrap"><div class="ia-about-heading"><div class="eyebrow">WAS WIR TUN</div><h2>Drei Leistungsbereiche. Ein digitaler Ansatz.</h2><p>Wir bieten einzelne Leistungen oder verbinden mehrere Bausteine zu einer Lösung, die zu Ihrem Unternehmen und Ihren Zielen passt.</p></div><div class="ia-about-grid">
+<section class="ia-about-hero ia-about-hero-premium">
+  <div class="ia-about-hero-layout">
+    <div class="ia-about-inner">
+      <div class="ia-about-eyebrow">DAS IST INDUSTRYAI</div>
+      <h1>Digitale Ideen.<br><span>Intelligente Lösungen.</span></h1>
+      <p>Wir unterstützen Unternehmen dabei, digital sichtbar zu werden, effizienter zu arbeiten und Menschen zu erreichen. Dafür verbinden wir Websites, individuelle Apps, Recruiting und intelligente digitale Prozesse mit einem klaren Blick für den Geschäftsalltag.</p>
+      <div class="ia-about-hero-actions">
+        <a class="ia-about-hero-primary" href="leistungen.html">Unsere Leistungen ansehen ↗</a>
+        <a class="ia-about-hero-secondary" href="kontakt.html">Projekt besprechen</a>
+      </div>
+      <div class="ia-about-hero-proof"><span>WEBSITES</span><i></i><span>APPS</span><i></i><span>RECRUITING</span><i></i><span>AUTOMATISIERUNG</span></div>
+    </div>
+    <div class="ia-about-hero-visual">
+      <img src="images/Photorealistic_premium_corporate_website_background_photogra.png" alt="Digitale Unternehmensberatung und moderne Geschäftsumgebung">
+      <div class="ia-about-visual-caption"><span>INDUSTRIAL INTELLIGENCE</span><strong>Technologie mit praktischem Nutzen.</strong></div>
+    </div>
+  </div>
+</section>
+<section class="ia-about-section ia-about-direction">
+  <div class="ia-about-wrap">
+    <div class="ia-about-direction-grid">
+      <div class="ia-about-direction-copy">
+        <div class="ia-about-eyebrow">UNSERE AUSRICHTUNG</div>
+        <h2>Technologie muss im Alltag einen Unterschied machen.</h2>
+        <p>INDUSTRYAI richtet sich an kleine und mittelständische Unternehmen, die digital professioneller auftreten, neue Wege in der Mitarbeitergewinnung nutzen oder interne und externe Abläufe weiterentwickeln möchten. Wir machen digitale Möglichkeiten verständlich und entwickeln Lösungen, die sich an den tatsächlichen Zielen und Anforderungen eines Unternehmens orientieren – vom Webauftritt bis zur individuellen Anwendung.</p>
+        <p>Wir verbinden Technologie, digitale Kommunikation und intelligente Lösungen. INDUSTRYAI unterstützt Unternehmen dabei, professionell online aufzutreten, eigene Apps und digitale Anwendungen einzusetzen und passende Mitarbeiter zu erreichen. Berufsorientierung und Karriereangebote ergänzen unser Angebot und bringen Menschen und Unternehmen zusammen.</p>
+      </div>
+      <aside class="ia-about-direction-note">
+        <span class="ia-about-note-mark">IA</span>
+        <span class="ia-about-note-label">UNSER ANSPRUCH</span>
+        <strong>Keine Technologie um ihrer selbst willen.</strong>
+        <p>Sondern digitale Lösungen, die verständlich sind, sinnvoll eingesetzt werden und im Alltag echten Mehrwert schaffen.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+<section class="ia-about-section alt ia-about-philosophy"><div class="ia-about-wrap"><div class="ia-about-heading"><div class="eyebrow">UNSERE PHILOSOPHIE</div><h2>INDUSTRY INTELLIGENCE: verstehen, entwickeln, verbessern.</h2><p>Wir betrachten nicht nur einzelne digitale Maßnahmen, sondern das Zusammenspiel aus Unternehmen, Zielgruppen, Technologie und Prozessen. KI und digitale Werkzeuge unterstützen uns dabei – entscheidend bleibt eine Lösung, die zum konkreten Bedarf passt.</p></div><div class="ia-about-grid"><article class="ia-about-card"><span class="num">01 / ANALYSIEREN</span><h3>Den Bedarf verstehen.</h3><p>Wir betrachten Ziele, Zielgruppen und bestehende digitale Strukturen, bevor wir einen Lösungsansatz empfehlen.</p></article><article class="ia-about-card"><span class="num">02 / ENTWICKELN</span><h3>Passende Lösungen schaffen.</h3><p>Von Websites und Apps bis zu Recruiting und Automatisierung: Wir richten die Umsetzung an den Anforderungen des Unternehmens aus.</p></article><article class="ia-about-card"><span class="num">03 / WEITERDENKEN</span><h3>Digitales Potenzial nutzen.</h3><p>Wir suchen nach sinnvollen Möglichkeiten, digitale Präsenz, Kommunikation und Abläufe Schritt für Schritt weiterzuentwickeln.</p></article></div></div></section>
+<section class="ia-about-section ia-about-audience"><div class="ia-about-wrap"><div class="ia-about-heading"><div class="eyebrow">TECHNOLOGIE & MENSCHEN</div><h2>Digitale Lösungen, die Menschen und Unternehmen weiterbringen.</h2><p>Technologie entfaltet ihren Nutzen dann, wenn sie Menschen erreicht und konkrete Aufgaben erleichtert. Deshalb verbinden wir digitale Unternehmenslösungen mit Recruiting und Berufsorientierung. Unternehmen erhalten Unterstützung bei ihrem digitalen Auftritt und der Mitarbeitergewinnung; Menschen bekommen Einblicke in Berufsfelder, Unternehmen und berufliche Möglichkeiten.</p></div><div class="ia-about-grid"><article class="ia-about-card"><span class="num">FÜR UNTERNEHMEN</span><h3>Passende Mitarbeiter finden.</h3><p>Arbeitgeber präsentieren ihren Betrieb, ihre Arbeitsplätze und offene Stellen.</p><p><a href="unternehmen.html" style="color:#42d8ed;font-weight:700">Unternehmensbereich ansehen →</a></p></article><article class="ia-about-card"><span class="num">FÜR ARBEITNEHMER</span><h3>Den passenden Betrieb finden.</h3><p>Schüler, Berufseinsteiger, Jobsuchende und Wechselwillige entdecken zunächst ihre Interessen und Möglichkeiten, lernen Berufsfelder kennen und finden anschließend Unternehmen und Stellen, die zu ihnen passen können.</p><p><a href="karriere-jobs.html" style="color:#42d8ed;font-weight:700">Karriere & Jobs entdecken →</a></p></article><article class="ia-about-card"><span class="num">DIE VERBINDUNG</span><h3>Mehr als eine Stellenanzeige.</h3><p>Aussagekräftige Unternehmensprofile und verständliche Berufseinblicke schaffen eine bessere Grundlage für das Zusammenfinden.</p></article></div></div></section>
+<section class="ia-about-section alt ia-about-services"><div class="ia-about-wrap"><div class="ia-about-heading"><div class="eyebrow">WAS WIR TUN</div><h2>Drei Leistungsbereiche. Ein digitaler Ansatz.</h2><p>Wir bieten einzelne Leistungen oder verbinden mehrere Bausteine zu einer Lösung, die zu Ihrem Unternehmen und Ihren Zielen passt.</p></div><div class="ia-about-grid">
 <article class="ia-about-card"><span class="num">01 / WEBSITES & WEBENTWICKLUNG</span><h3>Digital präsent sein.</h3><p>Moderne Unternehmenswebsites, Landingpages, Webanwendungen und digitale Plattformen für einen professionellen Auftritt.</p></article>
 <article class="ia-about-card"><span class="num">02 / APPS & AUTOMATISIERUNG</span><h3>Digital arbeiten.</h3><p>Individuelle Apps für Mitarbeiter und externe Zielgruppen sowie Konzepte zur Digitalisierung und Automatisierung von Abläufen.</p></article>
 <article class="ia-about-card"><span class="num">03 / RECRUITING</span><h3>Menschen erreichen.</h3><p>Recruiting-Checks, Karriere- und Bewerbungsseiten sowie eine überzeugende digitale Arbeitgeberpräsentation.</p></article>
 </div></div></section>
-<section class="ia-about-section"><div class="ia-about-wrap"><div class="ia-about-heading"><div class="eyebrow">UNSERE ARBEITSWEISE</div><h2>Ein Ansprechpartner. Ein klarer Ablauf.</h2></div><div class="ia-about-process">
+<section class="ia-about-section ia-about-process-section"><div class="ia-about-wrap"><div class="ia-about-heading"><div class="eyebrow">UNSERE ARBEITSWEISE</div><h2>Ein Ansprechpartner. Ein klarer Ablauf.</h2></div><div class="ia-about-process">
 <div class="ia-about-step"><b>01 / VERSTEHEN</b><h3>Bedarf klären</h3><p>Wir sprechen über Ziele, Zielgruppen und die Anforderungen Ihres Unternehmens.</p></div>
 <div class="ia-about-step"><b>02 / KONZIPIEREN</b><h3>Lösung planen</h3><p>Wir erarbeiten einen passenden Ansatz und stimmen Umfang und Prioritäten ab.</p></div>
 <div class="ia-about-step"><b>03 / UMSETZEN</b><h3>Digital entwickeln</h3><p>Wir realisieren die vereinbarten Maßnahmen oder koordinieren passende Spezialisten.</p></div>
