@@ -116,6 +116,7 @@
   const status=document.getElementById("contact-status");
   const captchaStatus=document.getElementById("turnstile-status");
   const siteKey=window.INDUSTRYAI_TURNSTILE_SITE_KEY||"";
+  const submissionsEnabled=window.INDUSTRYAI_SUBMISSIONS_ENABLED===true;
   const activateCaptcha=document.getElementById("activate-turnstile");
   let token="";
   let widgetId=null;
@@ -123,7 +124,8 @@
 
   function setCaptchaStatus(message){captchaStatus.textContent=message}
   function updateSubmit(){
-    submit.disabled=!(token&&window.INDUSTRYAI_SUPABASE_URL&&window.INDUSTRYAI_SUPABASE_PUBLISHABLE_KEY);
+    submit.disabled=!(submissionsEnabled&&token&&window.INDUSTRYAI_SUPABASE_URL&&window.INDUSTRYAI_SUPABASE_PUBLISHABLE_KEY);
+    if(!submissionsEnabled)submit.textContent="Kontaktversand derzeit deaktiviert";
   }
   function resetCaptcha(){
     token="";
@@ -131,6 +133,10 @@
     updateSubmit();
   }
   function loadTurnstile(){
+    if(!submissionsEnabled){
+      setCaptchaStatus("Der Kontaktversand ist derzeit deaktiviert. Bitte schreiben Sie direkt an info@industryai-solutions.de.");
+      return;
+    }
     if(captchaLoading)return;
     if(!siteKey){
       setCaptchaStatus("Der Bot-Schutz ist nicht konfiguriert. Bitte schreiben Sie direkt per E-Mail.");
@@ -193,6 +199,10 @@
   form.addEventListener("submit",async function(event){
     event.preventDefault();
     if(!form.reportValidity())return;
+    if(!submissionsEnabled){
+      status.textContent="Der Kontaktversand ist derzeit deaktiviert. Bitte schreiben Sie direkt an info@industryai-solutions.de.";
+      return;
+    }
     if(!token){
       status.textContent="Bitte bestätigen Sie zuerst den Bot-Schutz.";
       return;
@@ -235,7 +245,13 @@
     }
   });
 
-  activateCaptcha.addEventListener("click",loadTurnstile);
+  if(!submissionsEnabled){
+    activateCaptcha.disabled=true;
+    activateCaptcha.textContent="Kontaktversand derzeit deaktiviert";
+    setCaptchaStatus("Der Kontaktversand ist derzeit deaktiviert. Sie erreichen uns direkt unter info@industryai-solutions.de.");
+  }else{
+    activateCaptcha.addEventListener("click",loadTurnstile);
+  }
   updateSubmit();
 })();
 </script>
