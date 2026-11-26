@@ -156,6 +156,7 @@
  const empty=document.getElementById("uw-empty");
  const loading=document.getElementById("uw-loading");
  let cards=[];
+ let liveProfilesState="loading";
  const escapeHTML=value=>String(value??"").replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
  const safeUrl=(value,kind)=>{const url=String(value??"").trim();if(!url||url.startsWith("//"))return "";if(/^https:\/\//i.test(url))return url;if(/^[a-z][a-z0-9+.-]*:/i.test(url))return "";if(kind==="image"&&/^(?:\.\/|\/)?(?:images|assets)\//i.test(url))return url;if(kind==="link"&&/^(?:\.\/|\/)?[a-z0-9_./-]+\.html(?:[?#].*)?$/i.test(url))return url;return "";};
  function renderCard(company){
@@ -186,7 +187,8 @@
    if(show)visible++;
   });
   const demoVisible=cards.filter(card=>!card.hidden&&card.dataset.status==="demo").length;
-  results.textContent=visible+" "+(visible===1?"Eintrag":"Einträge")+" gefunden"+(demoVisible?" – davon "+demoVisible+" ausdrücklich gekennzeichnetes Musterprofil":"")+". Freigegebene Unternehmensprofile werden separat angezeigt.";
+  const sourceNote=liveProfilesState==="ready"?" Freigegebene Unternehmensprofile wurden ebenfalls berücksichtigt.":liveProfilesState==="error"?" Freigegebene Unternehmensprofile konnten gerade nicht geladen werden; angezeigt werden die verfügbaren Musterprofile.":" Freigegebene Unternehmensprofile werden zusätzlich geladen.";
+  results.textContent=visible+" "+(visible===1?"Eintrag":"Einträge")+" gefunden"+(demoVisible?" – davon "+demoVisible+" ausdrücklich gekennzeichnetes Musterprofil":"")+"."+sourceNote;
   empty.style.display=visible?"none":"block";
  }
  search.addEventListener("input",filter);
@@ -230,7 +232,9 @@
    // Freigegebene Unternehmensprofile aus Supabase ergänzen.
    loadPublishedProfiles()
     .then(liveData=>{
+     liveProfilesState="ready";
      const published=Array.isArray(liveData.entries)?liveData.entries.filter(item=>item&&item.status==="published"&&String(item.name||"").trim()&&safeUrl(item.profile,"link")):[];
+     filter();
      if(published.length){
       grid.insertAdjacentHTML("beforeend",published.map(renderCard).join(""));
       cards=Array.from(grid.querySelectorAll(".uw-card"));
@@ -238,6 +242,8 @@
      }
     })
     .catch(error=>{
+     liveProfilesState="error";
+     filter();
      console.warn("INDUSTRYAI Live-Unternehmensprofile derzeit nicht verfügbar. Musterprofile bleiben sichtbar.",error);
     });
   })
