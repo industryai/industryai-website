@@ -4,11 +4,45 @@
 .article-wrap{max-width:960px;margin:0 auto;padding:42px 26px 80px}.article-wrap article{color:#dce7f0;font-size:16px;line-height:1.85}.article-wrap h2{font:800 clamp(25px,3vw,34px)/1.2 Manrope,sans-serif;color:#f4f8fc;margin:48px 0 16px;scroll-margin-top:115px}.article-wrap h3{font:700 20px/1.35 Manrope,sans-serif;color:#42d8ed;margin:30px 0 10px;scroll-margin-top:115px}.article-wrap p{color:#b9c9d7;margin:0 0 18px}.article-wrap ul,.article-wrap ol{padding-left:24px;margin:0 0 22px;color:#b9c9d7}.article-wrap li{padding-left:4px;margin:0 0 9px}.article-wrap a{color:#42d8ed;text-decoration:underline;text-underline-offset:3px}.article-wrap a:hover{color:#fff}.article-wrap strong{color:#f4f8fc}.article-wrap img{display:block;width:100%;height:auto;max-height:480px;object-fit:cover;border-radius:14px;border:1px solid rgba(66,216,237,.2);margin:24px auto 30px}.article-wrap #inhaltsverzeichnis+ul{padding:22px 26px;border:1px solid rgba(66,216,237,.22);border-radius:12px;background:linear-gradient(145deg,#10283c,#091a2a)}.article-wrap table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse}.article-wrap th,.article-wrap td{padding:12px;border:1px solid #34536a;text-align:left}.article-wrap th{background:#10283c;color:#f4f8fc}.article-cta{margin:36px 0;padding:28px;border:1px solid rgba(66,216,237,.35);border-radius:14px;background:linear-gradient(145deg,#10283c,#091a2a)}.article-cta h2{margin:0 0 12px;font-size:25px}.article-cta p{margin-bottom:18px}.article-cta .cta-link{display:inline-block;padding:12px 18px;border-radius:7px;background:#42d8ed;color:#071321;text-decoration:none;font-weight:700}
 .site-footer{padding:32px 20px;text-align:center;border-top:1px solid rgba(255,255,255,.1);color:#91a7ba;font-size:13px}.site-footer img{display:block;width:220px;max-width:70vw;height:auto;margin:0 auto 14px}.site-footer a{color:#42d8ed}.site-footer div{margin-top:14px}
 @media(max-width:760px){.site-header{position:static;padding:14px 5%;justify-content:center}.ia-site-nav{justify-content:center}.ia-nav-group{justify-content:center}.article-wrap{padding:30px 6% 60px}.article-hero{padding:42px 6% 30px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Lesefluss und Inhaltsmodule */
+.article-wrap{max-width:1040px;padding:52px 32px 88px}
+.article-wrap article{font-size:16.5px;line-height:1.82}
+.article-wrap .article-lead{font-size:18px;line-height:1.9;color:#d0deea;margin:8px 0 34px}
+.article-wrap h2{margin:58px 0 20px;padding-bottom:12px;border-bottom:1px solid rgba(66,216,237,.18);font-size:clamp(26px,3vw,32px);line-height:1.24}
+.article-wrap h2:first-of-type{margin-top:42px}
+.article-wrap h3{font-size:19px;line-height:1.4;margin:32px 0 12px}
+.article-wrap #kurz-gesagt+ul{list-style:none;padding:22px 26px;margin:0 0 34px;border:1px solid rgba(66,216,237,.28);border-radius:14px;background:linear-gradient(145deg,rgba(16,40,60,.96),rgba(8,25,41,.96))}
+.article-wrap #kurz-gesagt+ul li{position:relative;padding-left:22px;margin:0 0 12px}
+.article-wrap #kurz-gesagt+ul li:last-child{margin-bottom:0}
+.article-wrap #kurz-gesagt+ul li:before{content:"";position:absolute;left:0;top:.72em;width:7px;height:7px;border-radius:50%;background:#42d8ed;box-shadow:0 0 12px rgba(66,216,237,.45)}
+.article-wrap #inhaltsverzeichnis+ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px;list-style:none;padding:24px 28px;margin:0 0 36px}
+.article-wrap #inhaltsverzeichnis+ul li{margin:0;padding:0}
+.article-wrap #inhaltsverzeichnis+ul a{text-decoration:none;display:block;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.article-wrap #inhaltsverzeichnis+ul a:hover{text-decoration:underline}
+.article-wrap img{max-height:none;object-fit:contain;background:rgba(4,14,25,.45);padding:8px;margin:28px auto 34px}
+.article-wrap table{width:100%;display:table;overflow:visible;border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;margin:22px 0 32px;font-size:15px}
+.article-wrap th,.article-wrap td{padding:14px 16px;vertical-align:top}
+.article-wrap td{background:rgba(10,29,46,.55)}
+.article-wrap tr:nth-child(even) td{background:rgba(16,40,60,.65)}
+.article-wrap #quellen+p a{display:block;width:fit-content;margin:0 0 8px}
+.article-wrap #empfehlungen+ul{padding:18px 24px;border-radius:12px;background:rgba(16,40,60,.55);border:1px solid rgba(66,216,237,.18)}
+.article-cta{margin:58px 0 12px;padding:34px}
+.article-cta h2{border:0;padding:0;margin:0 0 12px}
+@media(max-width:700px){
+ .article-wrap{padding:32px 20px 60px}
+ .article-wrap article{font-size:16px;line-height:1.78}
+ .article-wrap .article-lead{font-size:17px}
+ .article-wrap h2{margin-top:44px}
+ .article-wrap #inhaltsverzeichnis+ul{grid-template-columns:1fr;padding:18px 20px}
+ .article-wrap table{display:block;overflow-x:auto;white-space:normal}
+ .article-wrap th,.article-wrap td{min-width:145px;padding:11px 12px}
+ .article-cta{padding:24px 20px}
+}
+
 </style></head><body><header class="site-header"><a href="index.html" class="site-logo" aria-label="INDUSTRYAI Startseite"><img src="assets/industryai-logo-transparent-web%20(1).png?v=20261124-6" alt="INDUSTRYAI – Industrial Intelligence & Automation"></a><nav class="ia-site-nav" aria-label="Hauptnavigation"><div class="ia-nav-group"><a href="index.html">Startseite</a><a href="leistungen.html">Leistungen</a><a href="musterprojekte.html">Musterprojekte</a><a href="demo-center.html">Demo-Center</a><a href="unternehmen.html">Für Unternehmen</a><a href="unternehmenswelt.html">Unternehmenswelt</a></div><div class="ia-nav-group"><a href="recruiting-check.html" class="nav-button">Recruiting-Check ↗</a><a href="berufscheck.html">Berufscheck</a><a href="berufe-entdecken.html">Berufe entdecken</a><a href="karriere-jobs.html">Karriere &amp; Jobs</a><a href="ueber-uns.html">Über uns</a></div></nav></header><main><section class="article-hero"><div class="article-hero-inner"><div class="article-eyebrow">INDUSTRYAI · RATGEBER</div><h1>Unternehmensprofil erstellen: Schritt für Schritt sichtbar werden</h1><p>So richten Sie Ihr Google-Unternehmensprofil ein, bestätigen Ihren Betrieb und verbessern Ihren digitalen Auftritt für Kunden und Bewerber.</p></div></section><div class="article-wrap"><article>
-                <h1 id="unternehmensprofil-erstellen-schritt-fur-schritt-sichtbar-werden" tabindex="-1">Unternehmensprofil erstellen: Schritt für Schritt sichtbar werden</h1>
-<p><img loading="lazy" decoding="async" src="https://media.ai-fast-cdn.com/blog-images/organization-71229/1795713283996_Abstrakte-Profilkarten-fuhren-zu-digitaler-Sichtbarkeit.jpeg" alt="Abstrakte Profilkarten sorgen für digitale Sichtbarkeit"></p>
-<p>Wer ein Unternehmensprofil erstellen möchte, meint meistens das Google-Unternehmensprofil: den Eintrag, der bei Google Maps und in der Google Suche erscheint, sobald jemand nach Ihrem Betrieb oder Ihrer Leistung sucht. Das Anlegen ist kostenlos und in einer Stunde erledigt. Ob Kunden und Bewerber am Ende tatsächlich bei Ihnen landen, hängt aber an dem, was danach kommt: an vollständigen, gepflegten Angaben, an einer Website, auf die das Profil verweisen kann, und an einem Auftritt, der überall dasselbe Bild von Ihrem Unternehmen zeigt. Genau dieses Zusammenspiel entscheidet über Ihre digitale Sichtbarkeit. In diesem Beitrag zeigen wir Ihnen jeden Schritt, die typischen Stolperstellen und die Stellschrauben, mit denen Sie ein bestehendes Profil verbessern.</p>
-</div>
+                <p><img loading="lazy" decoding="async" src="https://media.ai-fast-cdn.com/blog-images/organization-71229/1795713283996_Abstrakte-Profilkarten-fuhren-zu-digitaler-Sichtbarkeit.jpeg" alt="Abstrakte Profilkarten sorgen für digitale Sichtbarkeit"></p>
+<p class="article-lead">Wer ein Unternehmensprofil erstellen möchte, meint meistens das Google-Unternehmensprofil: den Eintrag, der bei Google Maps und in der Google Suche erscheint, sobald jemand nach Ihrem Betrieb oder Ihrer Leistung sucht. Das Anlegen ist kostenlos und in einer Stunde erledigt. Ob Kunden und Bewerber am Ende tatsächlich bei Ihnen landen, hängt aber an dem, was danach kommt: an vollständigen, gepflegten Angaben, an einer Website, auf die das Profil verweisen kann, und an einem Auftritt, der überall dasselbe Bild von Ihrem Unternehmen zeigt. Genau dieses Zusammenspiel entscheidet über Ihre digitale Sichtbarkeit. In diesem Beitrag zeigen wir Ihnen jeden Schritt, die typischen Stolperstellen und die Stellschrauben, mit denen Sie ein bestehendes Profil verbessern.</p>
 <h2 id="kurz-gesagt" tabindex="-1">Kurz gesagt</h2>
 <ul>
 <li>Das Google-Unternehmensprofil ist ein kostenloser Eintrag, der festlegt, wie Ihr Unternehmen bei Google Maps und in der Google Suche erscheint.</li>
