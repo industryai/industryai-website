@@ -2787,3 +2787,45 @@ header nav.ia-site-nav a[aria-current="page"]{
  header nav.ia-site-nav{gap:6px!important}
  header nav.ia-site-nav a{font-size:9px!important;padding:6px 7px!important}
 }
+
+/* INDUSTRYAI – Desktop-Kopfbereich: Logo links, Navigation vollständig rechts */
+@media(min-width:801px){
+  header{
+    display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+    align-items:center!important;justify-content:flex-start!important;
+    gap:14px!important;padding:10px 2%!important;min-height:86px!important;
+  }
+  header .logo{
+    flex:0 0 170px!important;width:170px!important;min-width:170px!important;
+    justify-content:flex-start!important;margin:0!important;
+  }
+  header .logo img{width:165px!important;max-width:165px!important;height:auto!important}
+  header nav.ia-site-nav{
+    flex:1 1 auto!important;width:auto!important;max-width:none!important;min-width:0!important;
+    display:flex!important;flex-direction:column!important;align-items:stretch!important;
+    justify-content:center!important;gap:5px!important;margin:0!important;padding:0!important;
+    white-space:normal!important;overflow:visible!important;
+  }
+  header nav.ia-site-nav .ia-nav-group{
+    display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;
+    align-items:center!important;justify-content:flex-start!important;
+    width:100%!important;min-width:0!important;gap:5px!important;
+  }
+  header nav.ia-site-nav a{
+    flex:0 0 auto!important;min-height:32px!important;padding:6px 8px!important;
+    font-size:9px!important;line-height:1.15!important;
+  }
+}
+@media(min-width:801px) and (max-width:1050px){
+  header{gap:9px!important;padding-left:1.5%!important;padding-right:1.5%!important}
+  header .logo{flex-basis:145px!important;width:145px!important;min-width:145px!important}
+  header .logo img{width:140px!important;max-width:140px!important}
+  header nav.ia-site-nav .ia-nav-group{gap:4px!important}
+  header nav.ia-site-nav a{font-size:8px!important;padding:5px 6px!important}
+}
+@media(max-width:800px){
+  header{flex-direction:column!important;flex-wrap:wrap!important;align-items:center!important}
+  header .logo{flex:0 0 auto!important;width:auto!important;min-width:0!important;justify-content:center!important}
+  header nav.ia-site-nav{width:100%!important;flex:0 0 auto!important}
+  header nav.ia-site-nav .ia-nav-group{justify-content:center!important}
+}
