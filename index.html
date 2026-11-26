@@ -467,6 +467,32 @@
       .ia-aurora-orb-c,.ia-home-hero-banner .ia-home-hero-inner:after{animation:none!important}
     }
 
+
+    /* NAV FIX: Gruppen auf Desktop auflösen, damit alle Menüpunkte echte Geschwister in EINER Zeile sind */
+    @media(min-width:801px){
+      header{display:flex!important;flex-flow:row nowrap!important;align-items:center!important}
+      header .logo{flex:0 0 190px!important;width:190px!important;min-width:190px!important}
+      header .logo img{width:190px!important;max-width:190px!important}
+      header nav.ia-site-nav{
+        display:flex!important;flex-flow:row nowrap!important;align-items:center!important;
+        justify-content:flex-end!important;flex:1 1 auto!important;width:auto!important;min-width:0!important;
+        gap:5px!important;white-space:nowrap!important;
+      }
+      header nav.ia-site-nav>.ia-nav-group{display:contents!important}
+      header nav.ia-site-nav a{
+        flex:0 0 auto!important;display:inline-flex!important;white-space:nowrap!important;
+        min-height:29px!important;padding:5px 6px!important;font-size:8.5px!important;
+        border-radius:5px!important;
+      }
+      header nav.ia-site-nav .ia-nav-secondary{border:0!important;padding:0!important;margin:0!important}
+    }
+    @media(min-width:801px) and (max-width:1200px){
+      header .logo{flex-basis:160px!important;width:160px!important;min-width:160px!important}
+      header .logo img{width:160px!important;max-width:160px!important}
+      header nav.ia-site-nav{gap:3px!important}
+      header nav.ia-site-nav a{padding:4px 4px!important;font-size:7.5px!important}
+    }
+
   </style>
 </head>
 <body>
