@@ -593,6 +593,90 @@
     .ia-service-icon svg{width:20px;height:20px}
     .ia-home-card-icon svg{width:17px;height:17px}
 
+
+    /* Leistungsbereich – Premium-Karten mit klarerer Hierarchie */
+    .ia-services{padding-top:88px!important;padding-bottom:86px!important}
+    .ia-services-head{max-width:850px!important;margin-bottom:42px!important}
+    .ia-services-head h2{max-width:760px;letter-spacing:-.8px;text-wrap:balance}
+    .ia-services-head p{max-width:740px;margin:0 auto;font-size:14px;line-height:1.85}
+    .ia-services-image-cards{gap:20px!important;align-items:stretch}
+    .ia-services-image-cards .ia-service-image-card{
+      height:292px!important;min-height:292px!important;border-radius:15px!important;
+      border:1px solid rgba(66,216,237,.42)!important;
+      box-shadow:0 12px 32px rgba(0,0,0,.18);
+      isolation:isolate;background:#071a29!important;
+    }
+    .ia-services-image-cards .ia-service-art img{
+      filter:saturate(.92) brightness(.82);
+      transform:scale(1.001);
+      transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s ease!important;
+    }
+    .ia-services-image-cards .ia-service-art:after{
+      background:
+        linear-gradient(180deg,rgba(3,14,24,.12) 0%,rgba(3,14,24,.04) 28%,rgba(3,14,24,.78) 62%,rgba(3,14,24,.98) 100%),
+        linear-gradient(100deg,rgba(3,14,24,.48),transparent 78%)!important;
+    }
+    .ia-services-image-cards .ia-service-card-body{
+      padding:24px 22px 21px!important;
+      justify-content:flex-end!important;
+      background:linear-gradient(0deg,rgba(5,19,31,.26),transparent 75%);
+    }
+    .ia-services-image-cards .ia-service-icon{
+      top:17px!important;left:17px!important;width:42px!important;height:42px!important;
+      border-radius:11px!important;background:rgba(5,23,36,.82)!important;
+      box-shadow:0 5px 22px rgba(0,0,0,.22),0 0 22px rgba(66,216,237,.1);
+      backdrop-filter:blur(9px);
+    }
+    .ia-services-image-cards .ia-service-icon svg{width:21px!important;height:21px!important}
+    .ia-services-image-cards .ia-service-kicker{
+      display:block;margin:0 0 8px;color:#55dff0;font-size:9px;font-weight:800;
+      letter-spacing:1.8px;line-height:1.3;
+    }
+    .ia-services-image-cards .ia-service-card-body h3{
+      font-size:clamp(17px,1.5vw,20px)!important;line-height:1.22!important;
+      letter-spacing:-.25px;margin:0 0 9px!important;text-wrap:balance;
+    }
+    .ia-services-image-cards .ia-service-card-body p{
+      max-width:360px;font-size:12.5px!important;line-height:1.65!important;
+      color:#d0dce6!important;margin:0 0 13px!important;
+    }
+    .ia-services-image-cards .ia-service-link{
+      display:inline-flex;align-items:center;gap:7px;width:max-content;
+      font-size:11px!important;font-weight:800!important;letter-spacing:.2px;
+      padding-bottom:3px;border-bottom:1px solid rgba(66,216,237,.48);
+      transition:gap .2s ease,color .2s ease;
+    }
+    .ia-services-image-cards .ia-service-image-card:after{
+      content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+      border-radius:inherit;border:1px solid transparent;
+      background:linear-gradient(135deg,rgba(66,216,237,.18),transparent 45%,rgba(66,216,237,.08)) border-box;
+      opacity:0;transition:opacity .3s ease;
+    }
+    .ia-services-image-cards .ia-service-image-card:hover{
+      transform:translateY(-5px)!important;border-color:rgba(66,216,237,.9)!important;
+      box-shadow:0 18px 42px rgba(0,170,210,.16),0 8px 18px rgba(0,0,0,.22)!important;
+    }
+    .ia-services-image-cards .ia-service-image-card:hover:after{opacity:1}
+    .ia-services-image-cards .ia-service-image-card:hover .ia-service-art img{
+      transform:scale(1.055);filter:saturate(1.12) brightness(.9);
+    }
+    .ia-services-image-cards .ia-service-image-card:hover .ia-service-link{gap:12px;color:#9af2fb}
+    .ia-services-image-cards .ia-service-image-card:focus-visible{
+      outline:2px solid #55dff0!important;outline-offset:4px;
+    }
+    .ia-services-cta{margin-top:36px!important}
+    .ia-services-cta a{padding:13px 21px!important;border-radius:7px!important}
+    @media(max-width:900px){
+      .ia-services-image-cards{gap:15px!important}
+      .ia-services-image-cards .ia-service-image-card{height:280px!important;min-height:280px!important}
+    }
+    @media(max-width:600px){
+      .ia-services{padding-top:62px!important;padding-bottom:62px!important}
+      .ia-services-head{margin-bottom:28px!important}
+      .ia-services-image-cards .ia-service-image-card{height:250px!important;min-height:250px!important}
+      .ia-services-image-cards .ia-service-card-body{padding:20px 18px 18px!important}
+    }
+
   </style>
 </head>
 <body>
@@ -645,6 +729,7 @@
           <div class="ia-service-art"><img src="images/Photorealistic_premium_corporate_website_background_photogra.png" alt="Unternehmer und digitale Beratung vor einem modernen Firmengebäude"></div>
           <div class="ia-service-card-body">
             <span class="ia-service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 8h10M7 12h6"/></svg></span>
+            <span class="ia-service-kicker">WEB & SICHTBARKEIT</span>
             <h3>Digitaler Unternehmensauftritt</h3>
             <p>Websites und Social-Media-Auftritte professionell gestalten und Unternehmen mit Bildern, Videos und klarer Kommunikation sichtbar machen.</p>
             <span class="ia-service-link">Leistung ansehen →</span>
@@ -654,6 +739,7 @@
           <div class="ia-service-art"><img src="images/Photorealistic_premium_corporate_website_background_photogra%20(1).png" alt="Personalverantwortliche und Fachkräfte im Gespräch in einer Produktionshalle"></div>
           <div class="ia-service-card-body">
             <span class="ia-service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M20 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+            <span class="ia-service-kicker">TALENTE & RECRUITING</span>
             <h3>Mitarbeitergewinnung</h3>
             <p>Recruiting-Auftritte optimieren, Stellenanzeigen verbessern und Ausbildungsmarketing gezielt stärken.</p>
             <span class="ia-service-link">Leistung ansehen →</span>
@@ -663,6 +749,7 @@
           <div class="ia-service-art"><img src="images/Photorealistic_premium_corporate_website_background_photogra%20(2).png" alt="Digitale Unternehmensanwendungen auf mobilen Endgeräten"></div>
           <div class="ia-service-card-body">
             <span class="ia-service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 18h2"/></svg></span>
+            <span class="ia-service-kicker">APPS & DIGITALE TOOLS</span>
             <h3>Individuelle Unternehmens-Apps</h3>
             <p>Interne Mitarbeiter-Apps und externe Anwendungen für Kunden, Interessenten und Geschäftspartner.</p>
             <span class="ia-service-link">Leistung ansehen →</span>
