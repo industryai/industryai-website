@@ -525,6 +525,66 @@
       transform:none!important;
     }
 
+
+    /* PREMIUM MOTION PASS: Hero-Details, Abschnittsübergänge und fokussierte Karteninteraktionen */
+    .ia-home-hero-banner .ia-home-copy h1 span{
+      text-shadow:0 0 16px rgba(40,210,240,.18),0 0 34px rgba(0,140,220,.12);
+      animation:iaHeadlineGlow 5.5s ease-in-out infinite alternate;
+    }
+    .ia-home-hero-banner .ia-home-eyebrow{
+      position:relative;width:max-content;max-width:100%;
+    }
+    .ia-home-hero-banner .ia-home-eyebrow:after{
+      content:"";display:block;width:72px;height:2px;margin-top:10px;border-radius:2px;
+      background:linear-gradient(90deg,#42d8ed,rgba(66,216,237,0));
+      box-shadow:0 0 14px rgba(66,216,237,.55);
+      transform-origin:left;animation:iaKickerLine 4s ease-in-out infinite alternate;
+    }
+    .ia-home-hero-banner .ia-home-hero-inner:after{
+      content:"";position:absolute;z-index:0;pointer-events:none;left:0;right:0;bottom:-1px;height:1px;
+      background:linear-gradient(90deg,transparent,rgba(66,216,237,.55),rgba(66,216,237,.08),transparent);
+      box-shadow:0 0 18px rgba(0,190,230,.3);
+    }
+    .ia-services,.ia-home-areas{
+      position:relative;isolation:isolate;
+    }
+    .ia-services:before,.ia-home-areas:before{
+      content:"";position:absolute;top:0;left:7%;right:7%;height:1px;pointer-events:none;
+      background:linear-gradient(90deg,transparent,rgba(66,216,237,.32),rgba(66,216,237,.08),transparent);
+    }
+    .ia-services-head,.ia-home-section-head{
+      transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);
+    }
+    .ia-services-image-cards .ia-service-image-card,
+    .ia-home-grid .ia-home-navlink{
+      outline:none;
+      transition:transform .42s cubic-bezier(.2,.7,.2,1),border-color .35s ease,box-shadow .35s ease,filter .35s ease;
+    }
+    .ia-services-image-cards .ia-service-image-card:focus-visible,
+    .ia-home-grid .ia-home-navlink:focus-visible{
+      outline:2px solid rgba(66,216,237,.9);outline-offset:4px;border-radius:12px;
+    }
+    .ia-services-image-cards .ia-service-image-card:hover,
+    .ia-home-grid .ia-home-card:hover{
+      filter:brightness(1.06);
+    }
+    .ia-services-image-cards .ia-service-image-card:hover .ia-service-art img,
+    .ia-home-grid .ia-home-card:hover .ia-card-art img{
+      filter:saturate(1.18) contrast(1.03);
+    }
+    @keyframes iaHeadlineGlow{
+      from{text-shadow:0 0 12px rgba(40,210,240,.12),0 0 25px rgba(0,140,220,.08)}
+      to{text-shadow:0 0 20px rgba(40,210,240,.3),0 0 42px rgba(0,140,220,.18)}
+    }
+    @keyframes iaKickerLine{from{transform:scaleX(.72);opacity:.55}to{transform:scaleX(1.35);opacity:1}}
+    @media(max-width:800px){
+      .ia-home-hero-banner .ia-home-copy h1 span{animation-duration:7s}
+      .ia-services:before,.ia-home-areas:before{left:5%;right:5%}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .ia-home-hero-banner .ia-home-copy h1 span,.ia-home-hero-banner .ia-home-eyebrow:after{animation:none!important}
+    }
+
   </style>
 </head>
 <body>
@@ -657,8 +717,7 @@
     });
   },{threshold:.14,rootMargin:"0px 0px -35px 0px"});
   targets.forEach(el=>observer.observe(el));
-
-  targets.forEach(el=>observer.observe(el));
+})();
 </script>
 
 
