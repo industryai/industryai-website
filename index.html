@@ -300,6 +300,42 @@
     }
 
 
+
+    /* TESTLAB: sichtbare Bewegung ohne überlagernde Kartenebenen oder 3D-Transformationen */
+    .ia-home-hero-banner .ia-home-hero-inner{position:relative;isolation:isolate}
+    .ia-home-hero-banner .ia-home-hero-inner:before{
+      content:"";position:absolute;z-index:-1;pointer-events:none;
+      inset:-70px -8vw -70px -5vw;opacity:.34;
+      background-image:
+        radial-gradient(circle at 76% 48%,rgba(66,216,237,.34),transparent 27%),
+        repeating-linear-gradient(0deg,rgba(87,213,235,.13) 0,rgba(87,213,235,.13) 1px,transparent 1px,transparent 34px),
+        repeating-linear-gradient(90deg,rgba(87,213,235,.13) 0,rgba(87,213,235,.13) 1px,transparent 1px,transparent 34px);
+      mask-image:linear-gradient(90deg,transparent 2%,#000 34%,#000 94%,transparent);
+      animation:iaTestGridDrift 22s linear infinite;
+    }
+    @keyframes iaTestGridDrift{from{background-position:0 0,0 0,0 0}to{background-position:0 0,0 68px,68px 0}}
+    .ia-services-image-cards .ia-service-image-card,
+    .ia-home-grid .ia-home-card{
+      transition:transform .32s ease,border-color .32s ease,box-shadow .32s ease;
+      box-shadow:0 7px 22px rgba(0,0,0,.2);
+    }
+    .ia-services-image-cards .ia-service-image-card:hover,
+    .ia-home-grid .ia-home-card:hover{
+      transform:translateY(-7px);
+      border-color:#79efff;
+      box-shadow:0 16px 38px rgba(0,177,220,.24),0 0 18px rgba(66,216,237,.18);
+    }
+    .ia-services-image-cards .ia-service-image-card:hover .ia-service-art img,
+    .ia-home-grid .ia-home-card:hover .ia-card-art img{transform:scale(1.07)}
+    @media(max-width:800px){
+      .ia-home-hero-banner .ia-home-hero-inner:before{inset:-30px -5vw;opacity:.2}
+      .ia-services-image-cards .ia-service-image-card:hover,.ia-home-grid .ia-home-card:hover{transform:translateY(-3px)}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .ia-home-hero-banner .ia-home-hero-inner:before{animation:none}
+      .ia-services-image-cards .ia-service-image-card,.ia-home-grid .ia-home-card{transition:none}
+    }
+
   </style>
 </head>
 <body>
