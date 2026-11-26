@@ -508,6 +508,23 @@
       }
     }
 
+
+    /* NAV STABILITY: kein Hochspringen beim Hover/Fokus, feste Button-Geometrie */
+    header nav.ia-site-nav a,
+    header nav.ia-site-nav a:hover,
+    header nav.ia-site-nav a:focus-visible{
+      transform:none!important;
+      translate:none!important;
+      flex-shrink:0!important;
+      box-sizing:border-box!important;
+    }
+    header nav.ia-site-nav a{
+      transition:background-color .2s ease,border-color .2s ease,color .2s ease!important;
+    }
+    header nav.ia-site-nav a:hover{
+      transform:none!important;
+    }
+
   </style>
 </head>
 <body>
