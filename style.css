@@ -2652,3 +2652,53 @@ footer .logo img {
 
 /* Transparentes Original-Logo: keine Mischmodi mehr */
 header .logo img, footer .logo img { mix-blend-mode: normal !important; background: transparent !important; }
+
+
+/* INDUSTRYAI – zentrale, seitenübergreifend identische Navigation */
+header{
+  height:auto!important;min-height:96px!important;padding:12px 4%!important;
+  display:flex!important;flex-direction:row!important;align-items:center!important;
+  justify-content:space-between!important;gap:18px!important;
+}
+header nav.ia-site-nav{
+  width:auto!important;min-width:0!important;max-width:100%!important;flex:1 1 auto!important;
+  display:flex!important;flex-direction:column!important;align-items:flex-end!important;
+  justify-content:center!important;flex-wrap:nowrap!important;gap:5px!important;
+  padding:0!important;margin:0!important;white-space:normal!important;font-size:10px!important;
+}
+header nav.ia-site-nav .ia-nav-group{
+  width:100%;display:flex;flex-direction:row;align-items:center;justify-content:flex-end;
+  flex-wrap:wrap;gap:5px 6px;min-width:0;
+}
+header nav.ia-site-nav .ia-nav-secondary{
+  padding-top:5px;border-top:1px solid rgba(66,216,237,.16);
+}
+header nav.ia-site-nav a{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  min-height:31px!important;padding:6px 9px!important;border:1px solid rgba(66,216,237,.2)!important;
+  border-radius:6px!important;background:rgba(14,39,57,.48)!important;color:#d5e2ec!important;
+  font-size:10px!important;line-height:1.2!important;white-space:nowrap!important;text-decoration:none!important;
+  transition:background .2s ease,border-color .2s ease,color .2s ease!important;
+}
+header nav.ia-site-nav a:hover{color:#42d8ed!important;border-color:rgba(66,216,237,.75)!important;background:rgba(66,216,237,.09)!important}
+header nav.ia-site-nav a[aria-current="page"]{border-color:#42d8ed!important;background:rgba(66,216,237,.13)!important;color:#42d8ed!important}
+header nav.ia-site-nav a.nav-button:not([aria-current="page"]){border-color:rgba(66,216,237,.2)!important;background:rgba(14,39,57,.48)!important;color:#d5e2ec!important}
+header nav.ia-site-nav a.nav-button[aria-current="page"]{border-color:#42d8ed!important;background:rgba(66,216,237,.13)!important;color:#42d8ed!important}
+@media(max-width:1100px) and (min-width:801px){
+  header{padding-left:3%!important;padding-right:3%!important;gap:12px!important}
+  header nav.ia-site-nav .ia-nav-group{gap:4px}
+  header nav.ia-site-nav a{padding:6px 7px!important;font-size:9px!important}
+}
+@media(max-width:800px){
+  header{height:auto!important;min-height:0!important;padding:12px 5%!important;flex-direction:column!important;align-items:center!important;gap:9px!important}
+  header .logo{align-self:center!important;justify-content:center!important}
+  header nav.ia-site-nav{width:100%!important;flex:0 0 auto!important;align-items:center!important;gap:6px!important}
+  header nav.ia-site-nav .ia-nav-group{justify-content:center!important;gap:6px 8px!important}
+  header nav.ia-site-nav .ia-nav-secondary{padding-top:7px}
+  header nav.ia-site-nav a{min-height:32px!important;padding:7px 9px!important;font-size:10px!important}
+}
+@media(max-width:480px){
+  header{padding:10px 4%!important}
+  header nav.ia-site-nav .ia-nav-group{gap:5px 6px!important}
+  header nav.ia-site-nav a{padding:6px 7px!important;font-size:9px!important}
+}
