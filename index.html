@@ -677,6 +677,84 @@
       .ia-services-image-cards .ia-service-card-body{padding:20px 18px 18px!important}
     }
 
+
+    /* Weitere Angebote – optisch abgestimmte Plattform-Kacheln */
+    .ia-home-areas{padding-top:78px!important;padding-bottom:84px!important}
+    .ia-home-section-head{max-width:850px!important;margin:0 auto 38px!important}
+    .ia-home-section-head h2{max-width:780px;margin-left:auto!important;margin-right:auto!important;text-wrap:balance;letter-spacing:-.65px}
+    .ia-home-section-head p{max-width:740px;margin:0 auto!important;line-height:1.8}
+    .ia-home-grid{gap:18px!important;align-items:stretch}
+    .ia-home-grid .ia-home-navlink{display:block;height:100%;border-radius:14px}
+    .ia-home-grid .ia-home-card{
+      height:264px!important;min-height:264px!important;border-radius:14px!important;
+      border:1px solid rgba(66,216,237,.42)!important;
+      box-shadow:0 12px 30px rgba(0,0,0,.18);
+      isolation:isolate;background:#071a29!important;
+    }
+    .ia-home-grid .ia-card-art{height:100%!important;position:absolute!important;inset:0!important;overflow:hidden}
+    .ia-home-grid .ia-card-art img{
+      width:100%;height:100%;object-fit:cover;display:block;
+      filter:brightness(.8) saturate(.9);
+      transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s ease!important;
+    }
+    .ia-home-grid .ia-card-art:after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(180deg,rgba(3,14,24,.16) 0%,rgba(3,14,24,.12) 28%,rgba(3,14,24,.82) 65%,rgba(3,14,24,.98) 100%),
+      linear-gradient(100deg,rgba(3,14,24,.36),transparent 80%);
+    }
+    .ia-home-grid .ia-home-card-body{
+      position:absolute!important;inset:0!important;z-index:1;
+      display:flex!important;flex-direction:column!important;justify-content:flex-end!important;
+      padding:20px 18px 18px!important;background:linear-gradient(0deg,rgba(5,19,31,.2),transparent 75%);
+    }
+    .ia-home-grid .ia-home-card-icon{
+      top:16px!important;left:16px!important;right:auto!important;
+      width:42px!important;height:42px!important;flex:0 0 42px!important;
+      border-radius:11px!important;background:rgba(5,23,36,.82)!important;
+      box-shadow:0 5px 20px rgba(0,0,0,.2),0 0 18px rgba(66,216,237,.1);
+      backdrop-filter:blur(9px);
+    }
+    .ia-home-grid .ia-home-card-icon svg{width:20px!important;height:20px!important}
+    .ia-home-grid .ia-area-kicker{
+      display:block;color:#55dff0;font-size:8px!important;font-weight:800!important;
+      letter-spacing:1.35px;line-height:1.4;margin:0 0 7px;
+    }
+    .ia-home-grid .ia-home-card h3{
+      font-size:17px!important;line-height:1.22!important;letter-spacing:-.2px;
+      margin:0 0 7px!important;text-wrap:balance;
+    }
+    .ia-home-grid .ia-home-card p{
+      max-width:300px;font-size:11px!important;line-height:1.55!important;
+      color:#d0dce6!important;margin:0 0 10px!important;
+    }
+    .ia-home-grid .ia-home-card-body>span:last-child{
+      display:inline-flex;align-items:center;width:max-content;
+      font-size:10px!important;font-weight:800!important;letter-spacing:.15px;
+      padding-bottom:3px;border-bottom:1px solid rgba(66,216,237,.48);
+      transition:gap .2s ease,color .2s ease;
+    }
+    .ia-home-grid .ia-home-card:hover{
+      transform:translateY(-5px)!important;border-color:rgba(66,216,237,.9)!important;
+      box-shadow:0 18px 40px rgba(0,170,210,.15),0 8px 18px rgba(0,0,0,.22)!important;
+    }
+    .ia-home-grid .ia-home-card:hover .ia-card-art img{transform:scale(1.06);filter:brightness(.9) saturate(1.1)}
+    .ia-home-grid .ia-home-card:hover .ia-home-card-body>span:last-child{color:#a1f2fa}
+    .ia-home-grid .ia-home-navlink:focus-visible{outline:2px solid #55dff0!important;outline-offset:4px;border-radius:14px}
+    @media(max-width:1050px){
+      .ia-home-grid{gap:15px!important}
+      .ia-home-grid .ia-home-card{height:250px!important;min-height:250px!important}
+    }
+    @media(max-width:600px){
+      .ia-home-areas{padding-top:60px!important;padding-bottom:62px!important}
+      .ia-home-section-head{margin-bottom:28px!important}
+      .ia-home-grid{gap:12px!important}
+      .ia-home-grid .ia-home-card{height:230px!important;min-height:230px!important}
+      .ia-home-grid .ia-home-card-body{padding:16px 14px 15px!important}
+      .ia-home-grid .ia-home-card h3{font-size:15px!important}
+      .ia-home-grid .ia-home-card p{font-size:10px!important}
+      .ia-home-grid .ia-area-kicker{font-size:7px!important;letter-spacing:1px}
+    }
+
   </style>
 </head>
 <body>
@@ -768,10 +846,10 @@
       <p>Im Mittelpunkt stehen Websites, individuelle Apps, Recruiting und digitale Prozesse für Unternehmen. Ergänzend bieten wir digitale Berufsorientierung und Einblicke in Berufswelten und Unternehmen.</p>
     </div>
     <div class="ia-home-grid">
-      <a class="ia-home-navlink" href="berufscheck.html"><article class="ia-home-card ia-card-career"><div class="ia-card-art"><img src="images/berufscheck.jpg" alt="Berufsorientierung und digitaler Berufscheck"></div><div class="ia-home-card-body"><div class="ia-home-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3.5h6M8.5 10h7M8.5 14h4M14 17l1.5 1.5L19 15"/></svg></div><h3>Berufscheck</h3><p>Entdecke deine Interessen und Stärken. Finde heraus, welche Ausbildungsberufe zu dir passen könnten.</p><span>Zum Berufscheck →</span></div></article></a>
-      <a class="ia-home-navlink" href="recruiting-check.html"><article class="ia-home-card ia-card-recruiting"><div class="ia-card-art"><img src="images/recruiting-check.jpg" alt="Digitales Recruiting-Dashboard"></div><div class="ia-home-card-body"><div class="ia-home-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M8 10.5l1.7 1.7 3.3-3.6"/></svg></div><h3>Recruiting-Check</h3><p>Finde heraus, wie gut dein Unternehmen aufgestellt ist, um junge Talente zu erreichen.</p><span>Zum Recruiting-Check →</span></div></article></a>
-      <a class="ia-home-navlink" href="berufe-entdecken.html"><article class="ia-home-card ia-card-worlds"><div class="ia-card-art"><img src="images/berufe-entdecken.jpg" alt="Präzisionsfertigung mit CNC-Maschine"></div><div class="ia-home-card-body"><div class="ia-home-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6M8 10h.01M12 10h.01M16 10h.01"/></svg></div><h3>Berufe entdecken</h3><p>Erkunde verschiedene Berufsfelder und entdecke spannende Tätigkeiten und Arbeitswelten.</p><span>Berufswelten entdecken →</span></div></article></a>
-      <a class="ia-home-navlink" href="unternehmen.html"><article class="ia-home-card ia-card-company"><div class="ia-card-art"><img src="images/unternehmen.jpg" alt="Modernes Ausbildungsunternehmen"></div><div class="ia-home-card-body"><div class="ia-home-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V4h14v17M9 8h2M13 8h2M9 12h2M13 12h2M10 21v-5h4v5"/></svg></div><h3>Unternehmen</h3><p>Lerne Ausbildungsbetriebe kennen und erhalte Einblicke in ihre Arbeitswelt und Ausbildungsangebote.</p><span>Unternehmen kennenlernen →</span></div></article></a>
+      <a class="ia-home-navlink" href="berufscheck.html"><article class="ia-home-card ia-card-career"><div class="ia-card-art"><img src="images/berufscheck.jpg" alt="Berufsorientierung und digitaler Berufscheck"></div><div class="ia-home-card-body"><div class="ia-home-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3.5h6M8.5 10h7M8.5 14h4M14 17l1.5 1.5L19 15"/></svg></div><span class="ia-area-kicker">ORIENTIERUNG & STÄRKEN</span><h3>Berufscheck</h3><p>Entdecke deine Interessen und Stärken. Finde heraus, welche Ausbildungsberufe zu dir passen könnten.</p><span>Zum Berufscheck →</span></div></article></a>
+      <a class="ia-home-navlink" href="recruiting-check.html"><article class="ia-home-card ia-card-recruiting"><div class="ia-card-art"><img src="images/recruiting-check.jpg" alt="Digitales Recruiting-Dashboard"></div><div class="ia-home-card-body"><div class="ia-home-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M8 10.5l1.7 1.7 3.3-3.6"/></svg></div><span class="ia-area-kicker">ANALYSE & PERSONALGEWINNUNG</span><h3>Recruiting-Check</h3><p>Finde heraus, wie gut dein Unternehmen aufgestellt ist, um junge Talente zu erreichen.</p><span>Zum Recruiting-Check →</span></div></article></a>
+      <a class="ia-home-navlink" href="berufe-entdecken.html"><article class="ia-home-card ia-card-worlds"><div class="ia-card-art"><img src="images/berufe-entdecken.jpg" alt="Präzisionsfertigung mit CNC-Maschine"></div><div class="ia-home-card-body"><div class="ia-home-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6M8 10h.01M12 10h.01M16 10h.01"/></svg></div><span class="ia-area-kicker">BERUFSWELTEN & EINBLICKE</span><h3>Berufe entdecken</h3><p>Erkunde verschiedene Berufsfelder und entdecke spannende Tätigkeiten und Arbeitswelten.</p><span>Berufswelten entdecken →</span></div></article></a>
+      <a class="ia-home-navlink" href="unternehmen.html"><article class="ia-home-card ia-card-company"><div class="ia-card-art"><img src="images/unternehmen.jpg" alt="Modernes Ausbildungsunternehmen"></div><div class="ia-home-card-body"><div class="ia-home-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V4h14v17M9 8h2M13 8h2M9 12h2M13 12h2M10 21v-5h4v5"/></svg></div><span class="ia-area-kicker">BETRIEBE & AUSBILDUNG</span><h3>Unternehmen</h3><p>Lerne Ausbildungsbetriebe kennen und erhalte Einblicke in ihre Arbeitswelt und Ausbildungsangebote.</p><span>Unternehmen kennenlernen →</span></div></article></a>
     </div>
   </section>
 
