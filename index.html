@@ -232,7 +232,74 @@
     @media(max-width:900px){.ia-services-image-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:600px){.ia-services-image-cards{grid-template-columns:1fr}.ia-services-image-cards .ia-service-image-card{height:205px;min-height:205px}}
 
-</style>
+
+    /* INDUSTRYAI HOME MOTION – subtile Premium-Interaktionen, nur auf der Startseite */
+    .ia-home-hero-banner{isolation:isolate}
+    .ia-home-hero-banner:before{
+      content:"";position:absolute;z-index:-1;top:-35%;left:34%;width:48vw;height:48vw;max-width:680px;max-height:680px;
+      border-radius:50%;pointer-events:none;
+      background:radial-gradient(circle,rgba(27,190,220,.19) 0%,rgba(18,120,170,.09) 34%,transparent 70%);
+      filter:blur(18px);animation:iaHeroGlow 16s ease-in-out infinite alternate;
+    }
+    .ia-home-hero-banner .ia-hero-background{animation:iaHeroDrift 28s ease-in-out infinite alternate;will-change:transform}
+    .ia-home-hero-banner .ia-home-copy{animation:iaHeroEnter .9s cubic-bezier(.2,.7,.2,1) both}
+    .ia-home-hero-banner .ia-home-eyebrow{animation:iaHeroEnter .8s .08s both}
+    .ia-home-hero-banner .ia-home-copy h1{animation:iaHeroEnter .9s .16s both}
+    .ia-home-hero-banner .ia-home-copy p{animation:iaHeroEnter .9s .24s both}
+    .ia-home-hero-banner .ia-home-actions{animation:iaHeroEnter .9s .32s both}
+    .ia-services-image-cards .ia-service-image-card,
+    .ia-home-grid .ia-home-card{
+      transform:translateY(0);transition:transform .38s cubic-bezier(.2,.7,.2,1),border-color .38s ease,box-shadow .38s ease;
+      will-change:transform;
+    }
+    .ia-services-image-cards .ia-service-image-card:after{
+      content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;
+      background:linear-gradient(115deg,transparent 20%,rgba(125,238,255,.12) 48%,transparent 72%);
+      transform:translateX(-110%);transition:opacity .25s ease;
+    }
+    .ia-services-image-cards .ia-service-image-card:hover:after{opacity:1;animation:iaCardShimmer .9s ease}
+    .ia-services-image-cards .ia-service-image-card:hover,
+    .ia-home-grid .ia-home-card:hover{
+      transform:translateY(-8px);border-color:rgba(92,230,248,.95);
+      box-shadow:0 18px 42px rgba(0,175,220,.17),0 0 0 1px rgba(66,216,237,.08);
+    }
+    .ia-services-image-cards .ia-service-art img,
+    .ia-home-grid .ia-card-art img{transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s ease}
+    .ia-services-image-cards .ia-service-image-card:hover .ia-service-art img,
+    .ia-home-grid .ia-home-card:hover .ia-card-art img{transform:scale(1.075);filter:saturate(1.12)}
+    .ia-services-image-cards .ia-service-icon,
+    .ia-home-grid .ia-home-card-icon{transition:transform .35s ease,box-shadow .35s ease}
+    .ia-services-image-cards .ia-service-image-card:hover .ia-service-icon,
+    .ia-home-grid .ia-home-card:hover .ia-home-card-icon{transform:translateY(-3px) rotate(-5deg);box-shadow:0 0 22px rgba(66,216,237,.24)}
+    .ia-home-actions a,.ia-services-cta a{transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+    .ia-home-actions a:hover,.ia-services-cta a:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,190,220,.2)}
+    .ia-motion-ready [data-ia-reveal]{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+    .ia-motion-ready [data-ia-reveal].ia-revealed{opacity:1;transform:translateY(0)}
+    .ia-motion-ready .ia-services-image-cards [data-ia-reveal]:nth-child(2){transition-delay:.10s}
+    .ia-motion-ready .ia-services-image-cards [data-ia-reveal]:nth-child(3){transition-delay:.20s}
+    .ia-motion-ready .ia-home-grid [data-ia-reveal]:nth-child(2){transition-delay:.08s}
+    .ia-motion-ready .ia-home-grid [data-ia-reveal]:nth-child(3){transition-delay:.16s}
+    .ia-motion-ready .ia-home-grid [data-ia-reveal]:nth-child(4){transition-delay:.24s}
+    @keyframes iaHeroGlow{from{transform:translate3d(-5%,2%,0) scale(.9);opacity:.65}to{transform:translate3d(12%,-5%,0) scale(1.12);opacity:1}}
+    @keyframes iaHeroDrift{from{transform:scale(1)}to{transform:scale(1.045)}}
+    @keyframes iaHeroEnter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes iaCardShimmer{0%{transform:translateX(-110%)}100%{transform:translateX(110%)}}
+    @media(max-width:800px){
+      .ia-home-hero-banner:before{left:8%;top:4%;width:85vw;height:85vw;filter:blur(30px)}
+      .ia-home-hero-banner .ia-hero-background{animation-duration:36s}
+      .ia-services-image-cards .ia-service-image-card:hover,.ia-home-grid .ia-home-card:hover{transform:translateY(-4px)}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .ia-home-hero-banner:before,.ia-home-hero-banner .ia-hero-background,
+      .ia-home-hero-banner .ia-home-copy,.ia-home-hero-banner .ia-home-eyebrow,
+      .ia-home-hero-banner .ia-home-copy h1,.ia-home-hero-banner .ia-home-copy p,
+      .ia-home-hero-banner .ia-home-actions{animation:none!important}
+      .ia-motion-ready [data-ia-reveal]{opacity:1!important;transform:none!important;transition:none!important}
+      .ia-services-image-cards .ia-service-image-card,.ia-home-grid .ia-home-card,
+      .ia-services-image-cards .ia-service-art img,.ia-home-grid .ia-card-art img{transition:none!important}
+    }
+
+  </style>
 </head>
 <body>
 <header>
@@ -345,5 +412,26 @@
     <a href="impressum.html">Impressum</a>
   </div>
 </footer>
+
+<script>
+(function(){
+  const targets=document.querySelectorAll(
+    ".ia-services-head,.ia-services-image-cards .ia-service-image-card,.ia-home-section-head,.ia-home-grid .ia-home-navlink"
+  );
+  if(!targets.length || !("IntersectionObserver" in window)) return;
+  document.documentElement.classList.add("ia-motion-ready");
+  targets.forEach(el=>el.setAttribute("data-ia-reveal",""));
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("ia-revealed");
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:.14,rootMargin:"0px 0px -35px 0px"});
+  targets.forEach(el=>observer.observe(el));
+})();
+</script>
+
 </body>
 </html>
