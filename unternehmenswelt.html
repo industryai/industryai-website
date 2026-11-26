@@ -39,6 +39,16 @@
 @media(max-width:560px){.uw-grid{grid-template-columns:1fr}.uw-card img{height:190px}.uw-hero{padding:46px 6% 38px}}
 </style>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20261124-4">
+<style>
+.uw-highlights{max-width:1120px;margin:0 auto;padding:34px 7% 10px}
+.uw-highlight-inner{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.uw-highlight{padding:20px;border:1px solid rgba(66,216,237,.2);border-radius:12px;background:linear-gradient(145deg,#10283c,#091a2a)}
+.uw-highlight span{color:#42d8ed;font-size:10px;font-weight:800;letter-spacing:1.4px}
+.uw-highlight h2{margin:9px 0;color:#f4f8fc;font:700 18px Manrope,sans-serif}
+.uw-highlight p{margin:0;color:#b6c7d6;font-size:13px;line-height:1.7}
+.uw-approval-note{max-width:900px;margin:17px auto 0;text-align:center;color:#9fb3c5;font-size:12px;line-height:1.7}
+@media(max-width:720px){.uw-highlight-inner{grid-template-columns:1fr}.uw-highlights{padding-left:6%;padding-right:6%}}
+</style>
 </head>
 <body>
 <header>
@@ -58,6 +68,26 @@
 </header>
 <main>
 <section class="uw-hero"><div class="uw-inner"><div class="uw-eyebrow">UNTERNEHMEN & IHRE WELTEN</div><h1>Unternehmen kennenlernen.<br><span>Einblicke und Möglichkeiten entdecken.</span></h1><p>Entdecken Sie Unternehmen, ihre Branchen und Arbeitswelten. Die INDUSTRYAI-Unternehmenswelt bietet Einblicke in Betriebe, ihre Profile und beruflichen Perspektiven – übersichtlich an einem Ort.</p></div></section>
+<section class="uw-highlights" aria-label="Inhalte der Unternehmensprofile">
+ <div class="uw-highlight-inner">
+  <div class="uw-highlight">
+   <span>01 · DER BETRIEB</span>
+   <h2>Unternehmen verstehen</h2>
+   <p>Erfahren Sie, in welcher Branche ein Betrieb tätig ist, was er anbietet und wo er arbeitet.</p>
+  </div>
+  <div class="uw-highlight">
+   <span>02 · DIE ARBEITSWELT</span>
+   <h2>Einblicke gewinnen</h2>
+   <p>Lernen Sie Arbeitsbereiche, Technologien, Teams und typische Abläufe kennen.</p>
+  </div>
+  <div class="uw-highlight">
+   <span>03 · BERUFE & EINSTIEG</span>
+   <h2>Möglichkeiten entdecken</h2>
+   <p>Erhalten Sie Orientierung zu Berufsbildern, Ausbildung, Praktikum und beruflichen Perspektiven.</p>
+  </div>
+ </div>
+ <p class="uw-approval-note">Veröffentlichte Unternehmensprofile werden vorab geprüft und erst nach Freigabe sichtbar. Musterprofile sind ausdrücklich als Beispiele gekennzeichnet.</p>
+</section>
 <section class="uw-content"><div class="uw-heading"><div class="uw-eyebrow">UNTERNEHMENSPROFILE</div><h2>Die Vielfalt der Unternehmen entdecken</h2><p>Hier präsentieren sich Unternehmen mit Informationen zu ihrem Betrieb, ihrer Branche und ihrer Arbeitswelt. Ergänzend können Besucher berufliche Möglichkeiten und Einstiegswege kennenlernen.</p></div>
 <div class="uw-filters" role="search" aria-label="Unternehmen filtern">
 <input type="search" id="uw-search" placeholder="Unternehmen, Ort oder Branche suchen …" aria-label="Unternehmen, Ort oder Branche suchen">
