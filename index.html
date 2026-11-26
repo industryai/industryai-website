@@ -300,6 +300,299 @@
     }
 
 
+
+    /* TESTLAB: sichtbare Bewegung ohne überlagernde Kartenebenen oder 3D-Transformationen */
+    .ia-home-hero-banner .ia-home-hero-inner{position:relative;isolation:isolate}
+    .ia-home-hero-banner .ia-home-hero-inner:before{
+      content:"";position:absolute;z-index:-1;pointer-events:none;
+      inset:-70px -8vw -70px -5vw;opacity:.34;
+      background-image:
+        radial-gradient(circle at 76% 48%,rgba(66,216,237,.34),transparent 27%),
+        repeating-linear-gradient(0deg,rgba(87,213,235,.13) 0,rgba(87,213,235,.13) 1px,transparent 1px,transparent 34px),
+        repeating-linear-gradient(90deg,rgba(87,213,235,.13) 0,rgba(87,213,235,.13) 1px,transparent 1px,transparent 34px);
+      mask-image:linear-gradient(90deg,transparent 2%,#000 34%,#000 94%,transparent);
+      animation:iaTestGridDrift 22s linear infinite;
+    }
+    @keyframes iaTestGridDrift{from{background-position:0 0,0 0,0 0}to{background-position:0 0,0 68px,68px 0}}
+    .ia-services-image-cards .ia-service-image-card,
+    .ia-home-grid .ia-home-card{
+      transition:transform .32s ease,border-color .32s ease,box-shadow .32s ease;
+      box-shadow:0 7px 22px rgba(0,0,0,.2);
+    }
+    .ia-services-image-cards .ia-service-image-card:hover,
+    .ia-home-grid .ia-home-card:hover{
+      transform:translateY(-7px);
+      border-color:#79efff;
+      box-shadow:0 16px 38px rgba(0,177,220,.24),0 0 18px rgba(66,216,237,.18);
+    }
+    .ia-services-image-cards .ia-service-image-card:hover .ia-service-art img,
+    .ia-home-grid .ia-home-card:hover .ia-card-art img{transform:scale(1.07)}
+    @media(max-width:800px){
+      .ia-home-hero-banner .ia-home-hero-inner:before{inset:-30px -5vw;opacity:.2}
+      .ia-services-image-cards .ia-service-image-card:hover,.ia-home-grid .ia-home-card:hover{transform:translateY(-3px)}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .ia-home-hero-banner .ia-home-hero-inner:before{animation:none}
+      .ia-services-image-cards .ia-service-image-card,.ia-home-grid .ia-home-card{transition:none}
+    }
+
+
+    /* TESTLAB 2: dynamische Aurora-Landschaft mit Lichtströmen und Partikeln */
+    .ia-home-hero-banner{isolation:isolate;background:#04101d}
+    .ia-home-hero-banner:after{z-index:0;background:linear-gradient(90deg,rgba(3,13,24,.96) 0%,rgba(3,13,24,.86) 32%,rgba(3,13,24,.35) 58%,rgba(3,13,24,.06) 100%),linear-gradient(0deg,rgba(3,13,24,.2),transparent 45%)}
+    .ia-home-hero-banner .ia-hero-background{filter:brightness(.72) saturate(1.18)}
+    .ia-aurora-stage{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;mix-blend-mode:screen;opacity:1}
+    .ia-aurora-stage:before,.ia-aurora-stage:after{content:"";position:absolute;inset:-48%;border-radius:50%;filter:blur(48px);will-change:transform}
+    .ia-aurora-stage:before{
+      background:conic-gradient(from 25deg at 50% 50%,transparent 0deg,rgba(0,192,230,.08) 28deg,rgba(0,220,255,.66) 68deg,rgba(28,93,255,.38) 118deg,transparent 180deg,rgba(0,255,218,.52) 250deg,transparent 330deg);
+      animation:iaAuroraSweep 11s ease-in-out infinite alternate;
+    }
+    .ia-aurora-stage:after{
+      inset:-60% -30% -40% 8%;
+      background:conic-gradient(from 210deg at 50% 50%,transparent 0deg,rgba(31,115,255,.08) 38deg,rgba(24,126,255,.58) 84deg,rgba(0,255,220,.48) 145deg,transparent 218deg,rgba(0,205,255,.48) 286deg,transparent 340deg);
+      animation:iaAuroraSweepB 15s ease-in-out infinite alternate;
+    }
+    .ia-aurora-ribbon{position:absolute;left:-20%;width:145%;height:34%;border-radius:50%;filter:blur(22px);opacity:.48;transform:rotate(-9deg);will-change:transform}
+    .ia-aurora-ribbon-one{top:16%;background:linear-gradient(90deg,transparent,rgba(0,222,255,.06) 15%,rgba(0,222,255,.72) 43%,rgba(0,255,218,.42) 65%,transparent);animation:iaRibbonOne 9s ease-in-out infinite alternate}
+    .ia-aurora-ribbon-two{top:52%;height:26%;background:linear-gradient(90deg,transparent,rgba(0,111,255,.05) 20%,rgba(0,145,255,.58) 50%,rgba(0,239,220,.48) 72%,transparent);animation:iaRibbonTwo 12s ease-in-out infinite alternate}
+    .ia-aurora-orb{position:absolute;width:42vw;height:42vw;min-width:260px;min-height:260px;border-radius:50%;filter:blur(48px);opacity:.68;will-change:transform}
+    .ia-aurora-orb-a{left:36%;top:-42%;background:rgba(0,190,255,.78);animation:iaOrbA 9s ease-in-out infinite alternate}
+    .ia-aurora-orb-b{right:-8%;bottom:-60%;background:rgba(0,255,205,.62);animation:iaOrbB 11s ease-in-out infinite alternate}
+    .ia-aurora-orb-c{left:48%;bottom:-65%;background:rgba(65,90,255,.58);animation:iaOrbC 13s ease-in-out infinite alternate}
+    .ia-particle-field{position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:.8}
+    .ia-home-hero-banner .ia-home-hero-inner{z-index:2}
+    @keyframes iaRibbonOne{from{transform:translate3d(-8%,-12%,0) rotate(-12deg) scaleX(.82)}to{transform:translate3d(10%,15%,0) rotate(-4deg) scaleX(1.12)}}
+    @keyframes iaRibbonTwo{from{transform:translate3d(12%,8%,0) rotate(7deg) scaleX(1.08)}to{transform:translate3d(-10%,-14%,0) rotate(-3deg) scaleX(.86)}}
+    @keyframes iaAuroraSweep{from{transform:translate3d(-7%,-5%,0) rotate(-18deg) scale(.9)}to{transform:translate3d(9%,7%,0) rotate(28deg) scale(1.18)}}
+    @keyframes iaAuroraSweepB{from{transform:translate3d(8%,4%,0) rotate(12deg) scale(1.08)}to{transform:translate3d(-10%,-7%,0) rotate(-24deg) scale(.88)}}
+    @keyframes iaOrbA{from{transform:translate(-12%,8%) scale(.8)}to{transform:translate(26%,30%) scale(1.25)}}
+    @keyframes iaOrbB{from{transform:translate(-20%,-15%) scale(1)}to{transform:translate(8%,-42%) scale(1.35)}}
+    @keyframes iaOrbC{from{transform:translate(8%,0) scale(1.1)}to{transform:translate(-28%,-28%) scale(.78)}}
+    @media(max-width:700px){
+      .ia-aurora-stage:before,.ia-aurora-stage:after{filter:blur(38px)}
+      .ia-aurora-ribbon{opacity:.34;filter:blur(18px)}
+      .ia-aurora-orb{width:70vw;height:70vw;opacity:.46}
+      .ia-home-hero-banner:after{background:linear-gradient(90deg,rgba(3,13,24,.88),rgba(3,13,24,.55)),linear-gradient(0deg,rgba(3,13,24,.5),transparent)}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .ia-aurora-stage:before,.ia-aurora-stage:after,.ia-aurora-ribbon-one,.ia-aurora-ribbon-two,.ia-aurora-orb-a,.ia-aurora-orb-b,.ia-aurora-orb-c{animation:none!important}
+      .ia-particle-field{display:none}
+    }
+
+  
+    /* TESTLAB 4: gezielte Aurora-Lichtbahnen mit dunkler Bildtiefe */
+    .ia-home-hero-banner:after{
+      background:
+        linear-gradient(90deg,rgba(3,13,24,.97) 0%,rgba(3,13,24,.86) 30%,rgba(3,13,24,.28) 59%,rgba(3,13,24,.12) 100%),
+        linear-gradient(0deg,rgba(3,13,24,.3),transparent 48%),
+        radial-gradient(ellipse at 72% 48%,rgba(0,204,238,.09),transparent 48%)!important;
+    }
+    .ia-home-hero-banner .ia-hero-background{
+      animation:iaHeroImageFlow 27s ease-in-out infinite alternate!important;
+      transform-origin:58% 48%;will-change:transform,filter;
+      filter:brightness(.88) contrast(1.08) saturate(1.13)!important;
+    }
+    .ia-aurora-stage{opacity:.88!important}
+    .ia-aurora-stage:before{
+      filter:blur(62px)!important;
+      background:conic-gradient(from 25deg at 58% 48%,
+        transparent 0deg,rgba(0,192,230,.02) 30deg,
+        rgba(0,220,255,.38) 68deg,rgba(28,93,255,.2) 118deg,
+        transparent 180deg,rgba(0,255,218,.28) 250deg,transparent 330deg)!important;
+      animation:iaAuroraSweep 13s ease-in-out infinite alternate!important;
+    }
+    .ia-aurora-stage:after{
+      filter:blur(58px)!important;
+      background:conic-gradient(from 210deg at 54% 50%,
+        transparent 0deg,rgba(31,115,255,.02) 38deg,
+        rgba(24,126,255,.34) 84deg,rgba(0,255,220,.28) 145deg,
+        transparent 218deg,rgba(0,205,255,.3) 286deg,transparent 340deg)!important;
+      animation:iaAuroraSweepB 16s ease-in-out infinite alternate!important;
+    }
+    .ia-aurora-ribbon{
+      left:-24%!important;width:150%!important;height:22%!important;
+      border-radius:50%!important;filter:blur(9px)!important;opacity:.62!important;
+      mix-blend-mode:screen;will-change:transform;
+    }
+    .ia-aurora-ribbon-one{
+      top:14%!important;
+      background:linear-gradient(180deg,transparent 0%,rgba(0,222,255,.03) 30%,rgba(0,222,255,.18) 47%,rgba(128,248,255,.62) 51%,rgba(0,255,218,.18) 56%,transparent 78%)!important;
+      animation:iaRibbonOne 7.5s ease-in-out infinite alternate!important;
+    }
+    .ia-aurora-ribbon-two{
+      top:54%!important;height:18%!important;
+      background:linear-gradient(180deg,transparent 0%,rgba(0,111,255,.02) 34%,rgba(0,145,255,.2) 47%,rgba(112,227,255,.58) 51%,rgba(0,239,220,.18) 56%,transparent 78%)!important;
+      animation:iaRibbonTwo 9s ease-in-out infinite alternate!important;
+    }
+    .ia-aurora-stage .ia-aurora-ribbon:after{
+      content:"";position:absolute;left:5%;right:5%;top:49%;height:2px;border-radius:50%;
+      background:linear-gradient(90deg,transparent 0%,rgba(95,226,255,.2) 18%,rgba(190,252,255,.95) 48%,rgba(48,174,255,.8) 72%,transparent 100%);
+      box-shadow:0 0 10px 2px rgba(0,214,255,.48),0 0 28px 7px rgba(0,150,255,.22);
+    }
+    .ia-aurora-ribbon:before{
+      content:"";position:absolute;left:16%;right:18%;top:36%;height:1px;border-radius:50%;
+      background:linear-gradient(90deg,transparent,rgba(0,255,228,.78),rgba(93,201,255,.65),transparent);
+      box-shadow:0 0 22px 5px rgba(0,211,255,.28);
+    }
+    .ia-aurora-orb{filter:blur(58px)!important;opacity:.43!important}
+    .ia-aurora-orb-a{animation:iaOrbA 10s ease-in-out infinite alternate!important}
+    .ia-aurora-orb-b{animation:iaOrbB 12s ease-in-out infinite alternate!important}
+    .ia-aurora-orb-c{animation:iaOrbC 14s ease-in-out infinite alternate!important}
+    .ia-home-hero-banner .ia-home-hero-inner:after{
+      content:"";position:absolute;z-index:-1;pointer-events:none;top:-30%;bottom:-30%;left:-55%;width:24%;
+      background:linear-gradient(90deg,transparent,rgba(95,239,255,.05),rgba(145,247,255,.2),rgba(95,239,255,.04),transparent);
+      transform:skewX(-18deg);filter:blur(5px);
+      animation:iaHeroLightPass 8s ease-in-out infinite;
+    }
+    @keyframes iaHeroImageFlow{
+      0%{transform:scale(1.015) translate3d(-.6%,.2%,0);filter:brightness(.84) contrast(1.08) saturate(1.1)}
+      50%{filter:brightness(.91) contrast(1.1) saturate(1.2)}
+      100%{transform:scale(1.075) translate3d(.8%,-.4%,0);filter:brightness(.86) contrast(1.09) saturate(1.16)}
+    }
+    @keyframes iaHeroLightPass{
+      0%,18%{left:-55%;opacity:0}
+      34%{opacity:.75}
+      70%{left:125%;opacity:.48}
+      82%,100%{left:125%;opacity:0}
+    }
+    @media(max-width:800px){
+      .ia-home-hero-banner .ia-hero-background{animation-duration:32s!important}
+      .ia-aurora-stage{opacity:.68!important}
+      .ia-aurora-ribbon{opacity:.42!important;filter:blur(12px)!important}
+      .ia-aurora-orb{opacity:.3!important}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .ia-home-hero-banner .ia-hero-background,.ia-aurora-stage:before,.ia-aurora-stage:after,
+      .ia-aurora-ribbon-one,.ia-aurora-ribbon-two,.ia-aurora-orb-a,.ia-aurora-orb-b,
+      .ia-aurora-orb-c,.ia-home-hero-banner .ia-home-hero-inner:after{animation:none!important}
+    }
+
+
+    /* NAV FIX: Gruppen auf Desktop auflösen, damit alle Menüpunkte echte Geschwister in EINER Zeile sind */
+    @media(min-width:801px){
+      header{display:flex!important;flex-flow:row nowrap!important;align-items:center!important}
+      header .logo{flex:0 0 190px!important;width:190px!important;min-width:190px!important}
+      header .logo img{width:190px!important;max-width:190px!important}
+      header nav.ia-site-nav{
+        display:flex!important;flex-flow:row nowrap!important;align-items:center!important;
+        justify-content:flex-end!important;flex:1 1 auto!important;width:auto!important;min-width:0!important;
+        gap:5px!important;white-space:nowrap!important;
+      }
+      header nav.ia-site-nav>.ia-nav-group{display:contents!important}
+      header nav.ia-site-nav a{
+        flex:0 0 auto!important;display:inline-flex!important;white-space:nowrap!important;
+        min-height:29px!important;padding:5px 6px!important;font-size:8.5px!important;
+        border-radius:5px!important;
+      }
+      header nav.ia-site-nav .ia-nav-secondary{border:0!important;padding:0!important;margin:0!important}
+    }
+    @media(min-width:801px) and (max-width:1200px){
+      header .logo{flex-basis:160px!important;width:160px!important;min-width:160px!important}
+      header .logo img{width:160px!important;max-width:160px!important}
+      header nav.ia-site-nav{gap:3px!important}
+      header nav.ia-site-nav a{padding:4px 4px!important;font-size:7.5px!important}
+    }
+
+
+    /* NAV SPACING: Menueleiste größer und näher an das Logo */
+    @media(min-width:1201px){
+      header{padding-left:3%!important;padding-right:3%!important;gap:10px!important}
+      header .logo{flex:0 0 200px!important;width:200px!important;min-width:200px!important}
+      header .logo img{width:200px!important;max-width:200px!important}
+      header nav.ia-site-nav{
+        justify-content:flex-start!important;margin-left:18px!important;gap:6px!important;
+      }
+      header nav.ia-site-nav a{
+        min-height:34px!important;padding:7px 8px!important;font-size:9.5px!important;
+        letter-spacing:0!important;border-radius:6px!important;
+      }
+    }
+
+
+    /* NAV STABILITY: kein Hochspringen beim Hover/Fokus, feste Button-Geometrie */
+    header nav.ia-site-nav a,
+    header nav.ia-site-nav a:hover,
+    header nav.ia-site-nav a:focus-visible{
+      transform:none!important;
+      translate:none!important;
+      flex-shrink:0!important;
+      box-sizing:border-box!important;
+    }
+    header nav.ia-site-nav a{
+      transition:background-color .2s ease,border-color .2s ease,color .2s ease!important;
+    }
+    header nav.ia-site-nav a:hover{
+      transform:none!important;
+    }
+
+
+    /* PREMIUM MOTION PASS: Hero-Details, Abschnittsübergänge und fokussierte Karteninteraktionen */
+    .ia-home-hero-banner .ia-home-copy h1 span{
+      text-shadow:0 0 16px rgba(40,210,240,.18),0 0 34px rgba(0,140,220,.12);
+      animation:iaHeadlineGlow 5.5s ease-in-out infinite alternate;
+    }
+    .ia-home-hero-banner .ia-home-eyebrow{
+      position:relative;width:max-content;max-width:100%;
+    }
+    .ia-home-hero-banner .ia-home-eyebrow:after{
+      content:"";display:block;width:72px;height:2px;margin-top:10px;border-radius:2px;
+      background:linear-gradient(90deg,#42d8ed,rgba(66,216,237,0));
+      box-shadow:0 0 14px rgba(66,216,237,.55);
+      transform-origin:left;animation:iaKickerLine 4s ease-in-out infinite alternate;
+    }
+    .ia-home-hero-banner .ia-home-hero-inner:after{
+      content:"";position:absolute;z-index:0;pointer-events:none;left:0;right:0;bottom:-1px;height:1px;
+      background:linear-gradient(90deg,transparent,rgba(66,216,237,.55),rgba(66,216,237,.08),transparent);
+      box-shadow:0 0 18px rgba(0,190,230,.3);
+    }
+    .ia-services,.ia-home-areas{
+      position:relative;isolation:isolate;
+    }
+    .ia-services:before,.ia-home-areas:before{
+      content:"";position:absolute;top:0;left:7%;right:7%;height:1px;pointer-events:none;
+      background:linear-gradient(90deg,transparent,rgba(66,216,237,.32),rgba(66,216,237,.08),transparent);
+    }
+    .ia-services-head,.ia-home-section-head{
+      transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);
+    }
+    .ia-services-image-cards .ia-service-image-card,
+    .ia-home-grid .ia-home-navlink{
+      outline:none;
+      transition:transform .42s cubic-bezier(.2,.7,.2,1),border-color .35s ease,box-shadow .35s ease,filter .35s ease;
+    }
+    .ia-services-image-cards .ia-service-image-card:focus-visible,
+    .ia-home-grid .ia-home-navlink:focus-visible{
+      outline:2px solid rgba(66,216,237,.9);outline-offset:4px;border-radius:12px;
+    }
+    .ia-services-image-cards .ia-service-image-card:hover,
+    .ia-home-grid .ia-home-card:hover{
+      filter:brightness(1.06);
+    }
+    .ia-services-image-cards .ia-service-image-card:hover .ia-service-art img,
+    .ia-home-grid .ia-home-card:hover .ia-card-art img{
+      filter:saturate(1.18) contrast(1.03);
+    }
+    @keyframes iaHeadlineGlow{
+      from{text-shadow:0 0 12px rgba(40,210,240,.12),0 0 25px rgba(0,140,220,.08)}
+      to{text-shadow:0 0 20px rgba(40,210,240,.3),0 0 42px rgba(0,140,220,.18)}
+    }
+    @keyframes iaKickerLine{from{transform:scaleX(.72);opacity:.55}to{transform:scaleX(1.35);opacity:1}}
+    @media(max-width:800px){
+      .ia-home-hero-banner .ia-home-copy h1 span{animation-duration:7s}
+      .ia-services:before,.ia-home-areas:before{left:5%;right:5%}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .ia-home-hero-banner .ia-home-copy h1 span,.ia-home-hero-banner .ia-home-eyebrow:after{animation:none!important}
+    }
+
+
+    /* Einheitliche, inhaltlich passende Linien-Icons für alle Startseiten-Karten */
+    .ia-service-icon svg,.ia-home-card-icon svg{
+      display:block;width:19px;height:19px;flex:none;overflow:visible;
+    }
+    .ia-service-icon svg{width:20px;height:20px}
+    .ia-home-card-icon svg{width:17px;height:17px}
+
   </style>
 </head>
 <body>
@@ -328,6 +621,7 @@
 <main>
   <section class="ia-home-hero ia-home-hero-banner">
     <img class="ia-hero-background" src="images/hero-industryai.jpg" alt="" aria-hidden="true">
+    <div class="ia-aurora-stage" aria-hidden="true"><div class="ia-aurora-ribbon ia-aurora-ribbon-one"></div><div class="ia-aurora-ribbon ia-aurora-ribbon-two"></div><div class="ia-aurora-orb ia-aurora-orb-a"></div><div class="ia-aurora-orb ia-aurora-orb-b"></div><div class="ia-aurora-orb ia-aurora-orb-c"></div><canvas class="ia-particle-field"></canvas></div>
     <div class="ia-home-hero-inner">
       <div class="ia-home-copy">
         <div class="ia-home-eyebrow">WEBSITES · APPS · RECRUITING · DIGITALE LÖSUNGEN</div>
@@ -350,7 +644,7 @@
         <a class="ia-service-card ia-service-image-card" href="leistungen.html#digital">
           <div class="ia-service-art"><img src="images/Photorealistic_premium_corporate_website_background_photogra.png" alt="Unternehmer und digitale Beratung vor einem modernen Firmengebäude"></div>
           <div class="ia-service-card-body">
-            <span class="ia-service-icon">✧</span>
+            <span class="ia-service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 8h10M7 12h6"/></svg></span>
             <h3>Digitaler Unternehmensauftritt</h3>
             <p>Websites und Social-Media-Auftritte professionell gestalten und Unternehmen mit Bildern, Videos und klarer Kommunikation sichtbar machen.</p>
             <span class="ia-service-link">Leistung ansehen →</span>
@@ -359,7 +653,7 @@
         <a class="ia-service-card ia-service-image-card" href="leistungen.html#recruiting">
           <div class="ia-service-art"><img src="images/Photorealistic_premium_corporate_website_background_photogra%20(1).png" alt="Personalverantwortliche und Fachkräfte im Gespräch in einer Produktionshalle"></div>
           <div class="ia-service-card-body">
-            <span class="ia-service-icon">◇</span>
+            <span class="ia-service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M20 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
             <h3>Mitarbeitergewinnung</h3>
             <p>Recruiting-Auftritte optimieren, Stellenanzeigen verbessern und Ausbildungsmarketing gezielt stärken.</p>
             <span class="ia-service-link">Leistung ansehen →</span>
@@ -368,7 +662,7 @@
         <a class="ia-service-card ia-service-image-card" href="leistungen.html#apps">
           <div class="ia-service-art"><img src="images/Photorealistic_premium_corporate_website_background_photogra%20(2).png" alt="Digitale Unternehmensanwendungen auf mobilen Endgeräten"></div>
           <div class="ia-service-card-body">
-            <span class="ia-service-icon">▣</span>
+            <span class="ia-service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M11 18h2"/></svg></span>
             <h3>Individuelle Unternehmens-Apps</h3>
             <p>Interne Mitarbeiter-Apps und externe Anwendungen für Kunden, Interessenten und Geschäftspartner.</p>
             <span class="ia-service-link">Leistung ansehen →</span>
@@ -387,10 +681,10 @@
       <p>Im Mittelpunkt stehen Websites, individuelle Apps, Recruiting und digitale Prozesse für Unternehmen. Ergänzend bieten wir digitale Berufsorientierung und Einblicke in Berufswelten und Unternehmen.</p>
     </div>
     <div class="ia-home-grid">
-      <a class="ia-home-navlink" href="berufscheck.html"><article class="ia-home-card ia-card-career"><div class="ia-card-art"><img src="images/berufscheck.jpg" alt="Berufsorientierung und digitaler Berufscheck"></div><div class="ia-home-card-body"><div class="ia-home-card-icon">⌕</div><h3>Berufscheck</h3><p>Entdecke deine Interessen und Stärken. Finde heraus, welche Ausbildungsberufe zu dir passen könnten.</p><span>Zum Berufscheck →</span></div></article></a>
-      <a class="ia-home-navlink" href="recruiting-check.html"><article class="ia-home-card ia-card-recruiting"><div class="ia-card-art"><img src="images/recruiting-check.jpg" alt="Digitales Recruiting-Dashboard"></div><div class="ia-home-card-body"><div class="ia-home-card-icon">◇</div><h3>Recruiting-Check</h3><p>Finde heraus, wie gut dein Unternehmen aufgestellt ist, um junge Talente zu erreichen.</p><span>Zum Recruiting-Check →</span></div></article></a>
-      <a class="ia-home-navlink" href="berufe-entdecken.html"><article class="ia-home-card ia-card-worlds"><div class="ia-card-art"><img src="images/berufe-entdecken.jpg" alt="Präzisionsfertigung mit CNC-Maschine"></div><div class="ia-home-card-body"><div class="ia-home-card-icon">⌘</div><h3>Berufe entdecken</h3><p>Erkunde verschiedene Berufsfelder und entdecke spannende Tätigkeiten und Arbeitswelten.</p><span>Berufswelten entdecken →</span></div></article></a>
-      <a class="ia-home-navlink" href="unternehmen.html"><article class="ia-home-card ia-card-company"><div class="ia-card-art"><img src="images/unternehmen.jpg" alt="Modernes Ausbildungsunternehmen"></div><div class="ia-home-card-body"><div class="ia-home-card-icon">▦</div><h3>Unternehmen</h3><p>Lerne Ausbildungsbetriebe kennen und erhalte Einblicke in ihre Arbeitswelt und Ausbildungsangebote.</p><span>Unternehmen kennenlernen →</span></div></article></a>
+      <a class="ia-home-navlink" href="berufscheck.html"><article class="ia-home-card ia-card-career"><div class="ia-card-art"><img src="images/berufscheck.jpg" alt="Berufsorientierung und digitaler Berufscheck"></div><div class="ia-home-card-body"><div class="ia-home-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3.5h6M8.5 10h7M8.5 14h4M14 17l1.5 1.5L19 15"/></svg></div><h3>Berufscheck</h3><p>Entdecke deine Interessen und Stärken. Finde heraus, welche Ausbildungsberufe zu dir passen könnten.</p><span>Zum Berufscheck →</span></div></article></a>
+      <a class="ia-home-navlink" href="recruiting-check.html"><article class="ia-home-card ia-card-recruiting"><div class="ia-card-art"><img src="images/recruiting-check.jpg" alt="Digitales Recruiting-Dashboard"></div><div class="ia-home-card-body"><div class="ia-home-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M8 10.5l1.7 1.7 3.3-3.6"/></svg></div><h3>Recruiting-Check</h3><p>Finde heraus, wie gut dein Unternehmen aufgestellt ist, um junge Talente zu erreichen.</p><span>Zum Recruiting-Check →</span></div></article></a>
+      <a class="ia-home-navlink" href="berufe-entdecken.html"><article class="ia-home-card ia-card-worlds"><div class="ia-card-art"><img src="images/berufe-entdecken.jpg" alt="Präzisionsfertigung mit CNC-Maschine"></div><div class="ia-home-card-body"><div class="ia-home-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6M8 10h.01M12 10h.01M16 10h.01"/></svg></div><h3>Berufe entdecken</h3><p>Erkunde verschiedene Berufsfelder und entdecke spannende Tätigkeiten und Arbeitswelten.</p><span>Berufswelten entdecken →</span></div></article></a>
+      <a class="ia-home-navlink" href="unternehmen.html"><article class="ia-home-card ia-card-company"><div class="ia-card-art"><img src="images/unternehmen.jpg" alt="Modernes Ausbildungsunternehmen"></div><div class="ia-home-card-body"><div class="ia-home-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V4h14v17M9 8h2M13 8h2M9 12h2M13 12h2M10 21v-5h4v5"/></svg></div><h3>Unternehmen</h3><p>Lerne Ausbildungsbetriebe kennen und erhalte Einblicke in ihre Arbeitswelt und Ausbildungsangebote.</p><span>Unternehmen kennenlernen →</span></div></article></a>
     </div>
   </section>
 
@@ -431,8 +725,37 @@
     });
   },{threshold:.14,rootMargin:"0px 0px -35px 0px"});
   targets.forEach(el=>observer.observe(el));
+})();
+</script>
 
-  targets.forEach(el=>observer.observe(el));
+
+<script>
+(function(){
+  const canvas=document.querySelector(".ia-particle-field");
+  const hero=document.querySelector(".ia-home-hero-banner");
+  if(!canvas||!hero||window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const ctx=canvas.getContext("2d");let w=0,h=0,pts=[],raf=0,last=0;
+  const resize=()=>{
+    const r=hero.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,1.5);
+    w=r.width;h=r.height;canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+    const n=Math.min(76,Math.max(30,Math.round(w/16)));
+    pts=Array.from({length:n},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.38,vy:(Math.random()-.5)*.3,r:.7+Math.random()*1.6,p:Math.random()*6.28}));
+  };
+  const draw=t=>{
+    if(document.hidden)return;
+    if(t-last<30){raf=requestAnimationFrame(draw);return}last=t;ctx.clearRect(0,0,w,h);
+    for(let i=0;i<pts.length;i++){
+      const p=pts[i];p.x+=p.vx;p.y+=p.vy;p.p+=.025;
+      if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;
+      const alpha=.35+.35*(.5+.5*Math.sin(p.p));
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle="rgba(133,241,255,"+alpha+")";ctx.fill();
+      for(let j=i+1;j<pts.length;j++){const q=pts[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<135){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle="rgba(67,213,242,"+((1-d/135)*.24)+")";ctx.lineWidth=.8;ctx.stroke()}}
+    }
+    raf=requestAnimationFrame(draw);
+  };
+  resize();raf=requestAnimationFrame(draw);window.addEventListener("resize",resize,{passive:true});
+  document.addEventListener("visibilitychange",()=>{cancelAnimationFrame(raf);if(!document.hidden){last=0;raf=requestAnimationFrame(draw)}});
+})();
 </script>
 
 </body>
