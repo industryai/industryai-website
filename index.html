@@ -784,7 +784,23 @@
     @media(max-width:850px){.ia-process{padding:70px 6%}.ia-process-grid{grid-template-columns:1fr;gap:13px}.ia-process-card{min-height:0;padding:23px}.ia-process-number{margin-bottom:16px}}
     @media(max-width:600px){.ia-process,.ia-home-final-cta{padding:60px 5%}.ia-process-head{margin-bottom:28px}.ia-process-card h3{font-size:17px}.ia-home-final-actions{flex-direction:column}.ia-home-final-actions a{width:100%}}
 
-  </style>
+  
+.ia-ratgeber-teaser{padding:66px 7%;background:linear-gradient(180deg,#071321,#0a1b2b);border-top:1px solid rgba(66,216,237,.14)}
+.ia-ratgeber-teaser-inner{max-width:1160px;margin:auto;display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:center}
+.ia-ratgeber-kicker{color:#42d8ed;font-size:11px;font-weight:800;letter-spacing:2.5px;margin-bottom:12px}
+.ia-ratgeber-teaser-copy h2{color:#f4f8fc;font:800 clamp(28px,3.4vw,40px)/1.15 Manrope,sans-serif;margin:0 0 14px}
+.ia-ratgeber-teaser-copy p{color:#b6c7d6;font-size:14px;line-height:1.8;margin:0 0 22px}
+.ia-ratgeber-button{display:inline-block;padding:12px 18px;background:#42d8ed;color:#071321;border-radius:6px;font-size:12px;font-weight:800}
+.ia-ratgeber-feature{display:grid;grid-template-columns:.8fr 1.2fr;min-height:220px;border:1px solid rgba(66,216,237,.35);border-radius:13px;overflow:hidden;background:#0b2031;transition:.2s}
+.ia-ratgeber-feature:hover{border-color:#42d8ed;transform:translateY(-3px)}
+.ia-ratgeber-feature-image{background:linear-gradient(0deg,rgba(5,19,32,.15),rgba(5,19,32,.15)),url('https://media.ai-fast-cdn.com/blog-images/organization-71229/1795713283996_Abstrakte-Profilkarten-fuhren-zu-digitaler-Sichtbarkeit.jpeg') center/cover}
+.ia-ratgeber-feature-body{padding:24px;display:flex;flex-direction:column;justify-content:center}
+.ia-ratgeber-feature-body span{color:#42d8ed;font-size:9px;font-weight:800;letter-spacing:1.3px}
+.ia-ratgeber-feature-body h3{color:#f4f8fc;font:700 19px/1.35 Manrope,sans-serif;margin:12px 0}
+.ia-ratgeber-feature-body p{color:#b6c7d6;font-size:12px;line-height:1.65;margin:0 0 14px}
+.ia-ratgeber-feature-body b{color:#42d8ed;font-size:12px}
+@media(max-width:760px){.ia-ratgeber-teaser{padding:48px 6%}.ia-ratgeber-teaser-inner{grid-template-columns:1fr;gap:22px}.ia-ratgeber-feature{grid-template-columns:1fr;grid-template-rows:145px auto}.ia-ratgeber-feature-body{padding:20px}}
+</style>
 </head>
 <body>
 <header>
@@ -795,6 +811,8 @@
 <div class="ia-nav-group ia-nav-primary">
 <a href="index.html" aria-current="page">Startseite</a>
 <a href="leistungen.html">Leistungen</a>
+    <a href="ratgeber.html">Ratgeber</a>
+<a href="ratgeber.html">Ratgeber</a>
 <a href="musterprojekte.html">Musterprojekte</a>
 <a href="demo-center.html">Demo-Center</a>
 <a href="unternehmen.html">Für Unternehmen</a>
@@ -909,6 +927,22 @@
       </div>
     </div>
   </section>
+
+  <section class="ia-ratgeber-teaser" aria-labelledby="ia-ratgeber-title">
+    <div class="ia-ratgeber-teaser-inner">
+      <div class="ia-ratgeber-teaser-copy">
+        <div class="ia-ratgeber-kicker">WISSEN & PRAXIS</div>
+        <h2 id="ia-ratgeber-title">Der INDUSTRYAI Ratgeber.</h2>
+        <p>Praktische Orientierung rund um digitale Sichtbarkeit, Unternehmensauftritt, Recruiting und moderne Lösungen für Unternehmen. Verständlich erklärt und direkt anwendbar.</p>
+        <a href="ratgeber.html" class="ia-ratgeber-button">Zum Ratgeber ↗</a>
+      </div>
+      <a class="ia-ratgeber-feature" href="ratgeber-unternehmensprofil-erstellen.html">
+        <div class="ia-ratgeber-feature-image" role="img" aria-label="Digitale Unternehmensprofile und Online-Sichtbarkeit"></div>
+        <div class="ia-ratgeber-feature-body"><span>ERSTER BEITRAG · GOOGLE & SICHTBARKEIT</span><h3>Google-Unternehmensprofil erstellen: Schritt für Schritt sichtbar werden</h3><p>Von der Einrichtung über die Bestätigung bis zur laufenden Profilpflege.</p><b>Artikel lesen →</b></div>
+      </a>
+    </div>
+  </section>
+
   <section class="ia-home-final-cta" id="kontakt">
     <div class="ia-home-final-inner">
       <div class="ia-process-kicker">DER NÄCHSTE SCHRITT</div>
