@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /profilpruefung-intern.html
+
+Sitemap: https://industryai-solutions.de/sitemap.xml
