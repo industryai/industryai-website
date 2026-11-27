@@ -1,0 +1,21 @@
+# INDUSTRYAI – Digitale Lösungen für Unternehmen
+
+> INDUSTRYAI develops websites, custom apps, recruiting solutions, and digital processes for businesses. The site also offers career-orientation resources, recruiting assessments, and insights into occupations and training companies.
+
+INDUSTRYAI helps businesses improve their digital presence, reach potential employees, and simplify processes. Its approach moves from understanding a company’s needs to developing and implementing a suitable solution, with opportunities to refine it afterward.
+
+## Core Content
+
+- [Home](https://industryai-solutions.de/) — Overview of INDUSTRYAI’s digital services and approach.
+- [Services](https://industryai-solutions.de/leistungen.html) — Websites and online visibility, recruiting, custom apps, and digital processes.
+- [Digital presence](https://industryai-solutions.de/leistungen.html#digital) — Professional websites and social media for business visibility.
+- [Recruiting](https://industryai-solutions.de/leistungen.html#recruiting) — Recruiting pages, job listings, and apprenticeship marketing.
+- [Custom apps](https://industryai-solutions.de/leistungen.html#apps) — Internal employee apps and applications for customers and business partners.
+- [Contact](https://industryai-solutions.de/kontakt.html) — Enquire about a digital project.
+
+## Optional
+
+- [Career quiz](https://industryai-solutions.de/berufscheck.html) — Explore interests and strengths to identify potentially suitable apprenticeships.
+- [Recruiting check](https://industryai-solutions.de/recruiting-check.html) — Assess how well a company is positioned to reach young talent.
+- [Explore careers](https://industryai-solutions.de/berufe-entdecken.html) — Discover occupations, fields of work, and career environments.
+- [Companies](https://industryai-solutions.de/unternehmen.html) — Learn about training companies and their apprenticeship opportunities.
