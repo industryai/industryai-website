@@ -1,21 +1,25 @@
 # INDUSTRYAI – Digitale Lösungen für Unternehmen
 
-> INDUSTRYAI develops websites, custom apps, recruiting solutions, and digital processes for businesses. The site also offers career-orientation resources, recruiting assessments, and insights into occupations and training companies.
+> INDUSTRYAI develops professional websites, custom apps, recruiting solutions, and intelligent digital processes for companies.
 
-INDUSTRYAI helps businesses improve their digital presence, reach potential employees, and simplify processes. Its approach moves from understanding a company’s needs to developing and implementing a suitable solution, with opportunities to refine it afterward.
+INDUSTRYAI creates digital solutions that fit a company's goals, target groups, and workflows. The public website is organized around five areas: Leistungen, Musterprojekte, Ratgeber, Recruiting-Check, and Über uns.
 
-## Core Content
+## Core Areas
 
-- [Home](https://industryai-solutions.de/) — Overview of INDUSTRYAI’s digital services and approach.
-- [Services](https://industryai-solutions.de/leistungen.html) — Websites and online visibility, recruiting, custom apps, and digital processes.
-- [Digital presence](https://industryai-solutions.de/leistungen.html#digital) — Professional websites and social media for business visibility.
-- [Recruiting](https://industryai-solutions.de/leistungen.html#recruiting) — Recruiting pages, job listings, and apprenticeship marketing.
-- [Custom apps](https://industryai-solutions.de/leistungen.html#apps) — Internal employee apps and applications for customers and business partners.
-- [Contact](https://industryai-solutions.de/kontakt.html) — Enquire about a digital project.
+- [Home](https://industryai-solutions.de/) — Interactive campus homepage with five clickable buildings.
+- [Leistungen](https://industryai-solutions.de/leistungen.html) — Websites, web development, recruiting, custom apps, and digital processes.
+- [Musterprojekte](https://industryai-solutions.de/musterprojekte.html) — Example website and app concepts across different industries.
+- [Ratgeber](https://industryai-solutions.de/ratgeber.html) — Practical guidance for digital visibility, websites, apps, and recruiting.
+- [Recruiting-Check](https://industryai-solutions.de/recruiting-check.html) — A short assessment of a company's digital recruiting readiness.
+- [Über uns](https://industryai-solutions.de/ueber-uns.html) — INDUSTRYAI's approach, philosophy, and way of working.
 
-## Optional
+## Ratgeber Articles
 
-- [Career quiz](https://industryai-solutions.de/berufscheck.html) — Explore interests and strengths to identify potentially suitable apprenticeships.
-- [Recruiting check](https://industryai-solutions.de/recruiting-check.html) — Assess how well a company is positioned to reach young talent.
-- [Explore careers](https://industryai-solutions.de/berufe-entdecken.html) — Discover occupations, fields of work, and career environments.
-- [Companies](https://industryai-solutions.de/unternehmen.html) — Learn about training companies and their apprenticeship opportunities.
+- [Unternehmensprofil erstellen](https://industryai-solutions.de/ratgeber-unternehmensprofil-erstellen.html) — Practical guide to creating and maintaining a Google Business Profile.
+- [Individuelle App-Entwicklung](https://industryai-solutions.de/ratgeber-individuelle-app-entwicklung.html) — App types, use cases, planning, costs, and implementation.
+
+## Legal and Contact
+
+- [Kontakt](https://industryai-solutions.de/kontakt.html) — Get in touch about a project.
+- [Impressum](https://industryai-solutions.de/impressum.html) — Legal notice.
+- [Datenschutz](https://industryai-solutions.de/datenschutz.html) — Privacy information.
