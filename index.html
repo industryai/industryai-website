@@ -13,34 +13,105 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
         "@id": "https://industryai-solutions.de/#organization",
-        "name": "INDUSTRYAI",
+        "@type": "Organization",
         "url": "https://industryai-solutions.de/",
-        "description": "INDUSTRYAI entwickelt digitale Lösungen für Unternehmen: professionelle Websites, individuelle Apps, Recruiting und intelligente digitale Prozesse. Ergänzend bietet INDUSTRYAI digitale Berufsorientierung und Karriereangebote.",
-        "email": "info@industryai-solutions.de",
-        "founder": {
-          "@type": "Person",
-          "name": "Fabian DAngelo"
-        },
+        "name": "INDUSTRYAI",
+        "slogan": "Wir machen Unternehmen digital zukunftsfähig.",
         "knowsAbout": [
-          "Webdesign und Websiteentwicklung",
-          "Digitale Sichtbarkeit",
-          "Recruiting und Ausbildungsmarketing",
-          "Individuelle Unternehmens-Apps",
-          "Digitale Prozessoptimierung",
-          "Berufsorientierung"
-        ]
+          "Webentwicklung",
+          "Webdesign",
+          "Unternehmenswebsites",
+          "App-Entwicklung",
+          "Recruiting",
+          "Employer Branding",
+          "Ausbildungsmarketing",
+          "Digitale Prozesse",
+          "Automatisierung",
+          "Digitale Berufsorientierung"
+        ],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "name": "Websites und digitale Sichtbarkeit",
+            "description": "Professionelle Websites und Social-Media-Auftritte für Unternehmen mit klarer Kommunikation sowie Bild- und Videoinhalten.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Websites und digitale Sichtbarkeit",
+              "serviceType": "Webdesign und Webentwicklung",
+              "provider": { "@id": "https://industryai-solutions.de/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Recruiting und Mitarbeitergewinnung",
+            "description": "Optimierung von Recruiting-Auftritten, Stellenanzeigen und Ausbildungsmarketing zur gezielten Mitarbeitergewinnung.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Recruiting und Mitarbeitergewinnung",
+              "serviceType": "Recruiting, Employer Branding und Ausbildungsmarketing",
+              "provider": { "@id": "https://industryai-solutions.de/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Individuelle Unternehmens-Apps",
+            "description": "Entwicklung interner Mitarbeiter-Apps und externer Anwendungen für Kunden, Interessenten und Geschäftspartner.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Individuelle Unternehmens-Apps",
+              "serviceType": "App-Entwicklung",
+              "provider": { "@id": "https://industryai-solutions.de/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Digitale Lösungen und Automatisierungen",
+            "description": "Digitale Prozesse, Tools und intelligente Automatisierungen, die Unternehmen sichtbarer machen und Abläufe vereinfachen.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Digitale Lösungen und Automatisierungen",
+              "serviceType": "Digitale Transformation und Prozessautomatisierung",
+              "provider": { "@id": "https://industryai-solutions.de/#organization" }
+            }
+          }
+        ],
+        "description": "INDUSTRYAI entwickelt digitale Lösungen für Unternehmen, darunter professionelle Websites, individuelle Apps, Recruiting-Lösungen und intelligente digitale Prozesse."
       },
       {
-        "@type": "WebSite",
         "@id": "https://industryai-solutions.de/#website",
+        "@type": "WebSite",
         "url": "https://industryai-solutions.de/",
         "name": "INDUSTRYAI",
+        "publisher": { "@id": "https://industryai-solutions.de/#organization" },
         "inLanguage": "de-DE",
-        "publisher": {
-          "@id": "https://industryai-solutions.de/#organization"
-        }
+        "description": "INDUSTRYAI entwickelt digitale Lösungen für Unternehmen: moderne Websites, individuelle Apps, Recruiting und intelligente Automatisierungen."
+      },
+      {
+        "@id": "https://industryai-solutions.de/#webpage",
+        "@type": "WebPage",
+        "url": "https://industryai-solutions.de/",
+        "name": "INDUSTRYAI – Websites, Apps, Recruiting & digitale Lösungen",
+        "about": { "@id": "https://industryai-solutions.de/#organization" },
+        "headline": "Wir machen Unternehmen digital zukunftsfähig.",
+        "isPartOf": { "@id": "https://industryai-solutions.de/#website" },
+        "publisher": { "@id": "https://industryai-solutions.de/#organization" },
+        "breadcrumb": { "@id": "https://industryai-solutions.de/#breadcrumb" },
+        "inLanguage": "de-DE",
+        "mainEntity": { "@id": "https://industryai-solutions.de/#organization" },
+        "description": "INDUSTRYAI entwickelt digitale Lösungen für Unternehmen: moderne Websites, individuelle Apps, Recruiting und intelligente Automatisierungen. Ergänzend bieten wir digitale Berufsorientierung und Karriereangebote."
+      },
+      {
+        "@id": "https://industryai-solutions.de/#breadcrumb",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Startseite",
+            "item": "https://industryai-solutions.de/"
+          }
+        ]
       }
     ]
   }
