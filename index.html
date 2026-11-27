@@ -15,15 +15,10 @@ html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--bg);c
 svg{display:block;width:100%;height:100%;touch-action:pan-y;user-select:none;-webkit-user-select:none}\n#img-mobile{display:none}
 #img{opacity:0;transition:opacity 1s}
 .building-link{cursor:pointer;outline:none}
-.hs{fill:rgba(34,211,238,0);stroke:rgba(103,232,249,0);stroke-width:3;vector-effect:non-scaling-stroke;transition:fill .22s,stroke .22s}
-.building-link:hover .hs,.building-link:focus-visible .hs{fill:rgba(34,211,238,.13);stroke:#67e8f9;filter:drop-shadow(0 0 10px #22d3ee)}
-.pulse{fill:none;stroke:#67e8f9;stroke-width:2.5;vector-effect:non-scaling-stroke;pointer-events:none;transform-box:fill-box;transform-origin:center;animation:p 2.6s ease-out infinite}
-.dot{fill:rgba(34,211,238,.35);stroke:#67e8f9;stroke-width:2;vector-effect:non-scaling-stroke;pointer-events:none}
-@keyframes p{0%{transform:scale(.6);opacity:1}100%{transform:scale(2.2);opacity:0}}
-.tag{pointer-events:none;opacity:0;transition:opacity .22s}
-.tag rect{fill:rgba(3,10,22,.92);stroke:#22d3ee;stroke-width:1.5;vector-effect:non-scaling-stroke}
-.tag text{fill:#e6f7ff;font:700 22px "Segoe UI",system-ui,sans-serif;text-anchor:middle}
-.building-link:hover .tag,.building-link:focus-visible .tag{opacity:1}
+/* Unsichtbare Klickflächen: die Beschriftungen sind bereits im Campusbild enthalten. */
+.hs{fill:transparent !important;stroke:none !important;filter:none !important}
+.building-link:hover .hs,.building-link:focus-visible .hs{fill:transparent !important;stroke:none !important;filter:none !important}
+.pulse,.dot,.tag{display:none !important;opacity:0 !important}
 #fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:screen}
 #vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 55%,rgba(3,7,18,.48) 100%)}
 #load{position:fixed;inset:0;display:grid;place-items:center;background:var(--bg);z-index:9;color:var(--cy2);letter-spacing:.4em;font-size:13px;transition:opacity .9s;pointer-events:none}
