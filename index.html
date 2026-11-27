@@ -35,6 +35,9 @@ svg{display:block;width:100%;height:100%;touch-action:pan-y;user-select:none;-we
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
 
 .campus-mobile-nav { display:none; }
+/* Explicitly select exactly one campus image per device */
+#img { display:inline !important; }
+#img-mobile { display:none !important; }
 /* Mobile campus: vollständige Panoramaansicht plus Touch-Navigation */
 @media (max-width: 700px) {
   html, body { width:100%; height:auto; min-height:100%; overflow-x:hidden; overflow-y:auto; overscroll-behavior-y:contain; }
@@ -43,7 +46,8 @@ svg{display:block;width:100%;height:100%;touch-action:pan-y;user-select:none;-we
   #svg { display:block; width:100%; height:100%; aspect-ratio:auto; touch-action:pan-y; }
   #img { display:none; }
   #svg > rect, #svg > ellipse { display:none !important; }
-  #img-mobile { display:inline; opacity:1; }
+  #img-mobile { display:inline !important; opacity:1; }
+  #img { display:none !important; }
   .mobile-hotspots { display:inline; }
   #hot { display:none; }
   .campus-legal { display:none !important; }
