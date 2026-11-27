@@ -12,7 +12,7 @@
 html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--bg);color:var(--ink);font-family:Inter,"Segoe UI",system-ui,sans-serif}
 #wrap{position:fixed;inset:0;perspective:1400px;overflow:hidden;background:var(--bg)}
 #stage{position:absolute;inset:0;z-index:1;transform-style:preserve-3d;will-change:transform}
-svg{display:block;width:100%;height:100%;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+svg{display:block;width:100%;height:100%;touch-action:pan-y;user-select:none;-webkit-user-select:none}\n#img-mobile{display:none}
 #img{opacity:0;transition:opacity 1s}
 .building-link{cursor:pointer;outline:none}
 .hs{fill:rgba(34,211,238,0);stroke:rgba(103,232,249,0);stroke-width:3;vector-effect:non-scaling-stroke;transition:fill .22s,stroke .22s}
@@ -41,6 +41,11 @@ svg{display:block;width:100%;height:100%;touch-action:pan-y;user-select:none;-we
   #wrap { position:fixed; inset:0; width:100%; height:100vh; height:100dvh; min-height:0; overflow:hidden; perspective:none; }
   #stage { position:absolute; inset:0; width:100%; height:100%; aspect-ratio:auto; transform:none !important; will-change:auto; }
   #svg { display:block; width:100%; height:100%; aspect-ratio:auto; touch-action:pan-y; }
+  #img { display:none; }
+  #img-mobile { display:inline; opacity:1; }
+  .mobile-hotspots { display:inline; }
+  #hot { display:none; }
+  .campus-legal { display:none !important; }
   #fx, #vig { display:none; }
   .tag, .pulse, .dot { display:none !important; }
   .campus-mobile-nav { display:none !important; }
@@ -67,6 +72,7 @@ svg{display:block;width:100%;height:100%;touch-action:pan-y;user-select:none;-we
  <div id="stage">
   <svg id="svg" viewBox="0 0 1672 941" preserveAspectRatio="none" role="group" aria-label="Interaktiver INDUSTRY AI Campus">
    <image id="img" href="images/industryai-campus-home.webp" x="0" y="0" width="1672" height="941" preserveAspectRatio="none"/>
+   <image id="img-mobile" href="assets/industryai-campus-mobile.webp" x="0" y="0" width="940" height="1672" preserveAspectRatio="none"/>
    <defs>
     <linearGradient id="coverMasthead" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#061626" stop-opacity="1"/>
@@ -129,6 +135,23 @@ svg{display:block;width:100%;height:100%;touch-action:pan-y;user-select:none;-we
     </g>
   </a>
    </g>
+   <g class="mobile-hotspots" aria-label="Mobile Campusbereiche">
+    <a class="building-link" href="musterprojekte.html" aria-label="Musterprojekte öffnen">
+     <polygon class="hs" points="0,520 345,520 380,575 365,780 0,780"/>
+    </a>
+    <a class="building-link" href="ratgeber.html" aria-label="Ratgeber öffnen">
+     <polygon class="hs" points="570,500 940,500 940,770 590,770 565,650"/>
+    </a>
+    <a class="building-link" href="leistungen.html" aria-label="Leistungen öffnen">
+     <polygon class="hs" points="0,815 355,815 380,900 365,1110 0,1110"/>
+    </a>
+    <a class="building-link" href="recruiting-check.html" aria-label="Recruiting-Check öffnen">
+     <polygon class="hs" points="585,730 940,730 940,1030 580,1030 560,820"/>
+    </a>
+    <a class="building-link" href="ueber-uns.html" aria-label="Über uns öffnen">
+     <polygon class="hs" points="575,965 940,965 940,1265 570,1265 550,1080"/>
+    </a>
+   </g>
   </svg>
  </div>
  <canvas id="fx" aria-hidden="true"></canvas>
@@ -170,7 +193,10 @@ window.addEventListener("pointerup",function(){sx=null;setTimeout(function(){mov
 function frame(t){
  requestAnimationFrame(frame);
  var ar=aspect();
- if(ar>=W/H){
+ if(innerWidth<=700){
+  svg.setAttribute("viewBox","0 0 940 1672");
+  stage.style.transform="none";
+ }else if(ar>=W/H){
   svg.setAttribute("viewBox","0 0 "+W+" "+H);
   stage.style.transform="none";
  }else{
