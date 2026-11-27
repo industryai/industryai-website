@@ -15,9 +15,10 @@ html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--bg);c
 svg{display:block;width:100%;height:100%;touch-action:pan-y;user-select:none;-webkit-user-select:none}\n#img-mobile{display:none}
 #img{opacity:0;transition:opacity 1s}
 .building-link{cursor:pointer;outline:none}
-/* Unsichtbare Klickflächen: die Beschriftungen sind bereits im Campusbild enthalten. */
-.hs{fill:transparent !important;stroke:none !important;filter:none !important}
-.building-link:hover .hs,.building-link:focus-visible .hs{fill:transparent !important;stroke:none !important;filter:none !important}
+/* Gebäude bleiben anklickbar; nur sichtbare Hover-Markierungen sind deaktiviert. */
+.building-link{pointer-events:all;cursor:pointer}
+.building-link .hs{fill:rgba(0,0,0,0.001) !important;stroke:transparent !important;stroke-width:0 !important;filter:none !important;pointer-events:all}
+.building-link:hover .hs,.building-link:focus-visible .hs{fill:rgba(0,0,0,0.001) !important;stroke:transparent !important;stroke-width:0 !important;filter:none !important}
 .pulse,.dot,.tag{display:none !important;opacity:0 !important}
 #fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:screen}
 #vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 55%,rgba(3,7,18,.48) 100%)}
